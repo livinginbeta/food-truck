@@ -9,16 +9,27 @@ import javax.persistence.Id;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String name;
+    private String description;
     private Double price;
-    private Integer inventory;
 
-    public Integer getId() {
+
+    public Item(Long id, String name, String description, Double price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
+    public Item(){
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -38,11 +49,11 @@ public class Item {
         this.price = price;
     }
 
-    public Integer getInventory() {
-        return inventory;
+    public String getDescription() {
+        return description;
     }
 
-    public void setInventory(Integer inventory) {
-        this.inventory = inventory;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
