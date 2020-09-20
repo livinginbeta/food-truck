@@ -1,22 +1,22 @@
 package com.casestudy.foodtruck.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long itemId;
     private String name;
     private String description;
     private Double price;
 
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE})
+    private Cart cart;
 
-    public Item(Long id, String name, String description, Double price) {
-        this.id = id;
+
+    public Item(Long itemId, String name, String description, Double price) {
+        this.itemId = itemId;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -25,12 +25,12 @@ public class Item {
     public Item(){
     }
 
-    public Long getId() {
-        return id;
+    public Long getItemId() {
+        return itemId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
     }
 
     public String getName() {

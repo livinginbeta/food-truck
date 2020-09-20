@@ -1,9 +1,9 @@
 package com.casestudy.foodtruck.repository;
 
-import com.casestudy.foodtruck.model.Item;
+import com.casestudy.foodtruck.model.Cart;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ItemRepository extends CrudRepository<Item, Long> {
+public interface CartRepository extends CrudRepository<Cart, Long> {
 }

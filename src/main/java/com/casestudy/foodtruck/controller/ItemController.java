@@ -31,19 +31,19 @@ public class ItemController {
         return new ResponseEntity<>(itemService.readAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/read/{id}")
-    public ResponseEntity<Item> readById(@PathVariable Long id) {
-        return new ResponseEntity<>(itemService.readById(id), HttpStatus.OK);
+    @GetMapping("/read/{itemId}")
+    public ResponseEntity<Item> readById(@PathVariable Long itemId) {
+        return new ResponseEntity<>(itemService.readById(itemId), HttpStatus.OK);
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Item> update(@PathVariable Long id, @RequestBody Item newData) {
-        return new ResponseEntity<>(itemService.updateById(id, newData), HttpStatus.OK);
+    @PutMapping("/update/{itemId}")
+    public ResponseEntity<Item> update(@PathVariable Long itemId, @RequestBody Item newData) {
+        return new ResponseEntity<>(itemService.updateById(itemId, newData), HttpStatus.OK);
         }
 
 
-    @DeleteMapping("/delete/{id}")
-        public ResponseEntity<Item> delete(@PathVariable Long id) {
-        return new ResponseEntity<>(itemService.deleteById(id), HttpStatus.OK);
+    @DeleteMapping("/delete/{itemId}")
+        public ResponseEntity<Item> delete(@PathVariable Long itemId) {
+        return new ResponseEntity<>(itemService.deleteById(itemId), HttpStatus.OK);
         }
 }

@@ -21,8 +21,8 @@ public class ItemService {
         return itemRepository.save(item);
     }
 
-    public Item readById(Long id) {
-        return itemRepository.findById(id.intValue()).get();
+    public Item readById(Long itemId) {
+        return itemRepository.findById(itemId).get();
     }
 
     public List<Item> readAll() {
@@ -33,9 +33,9 @@ public class ItemService {
         return itemList;
     }
 
-    public Item updateById(Long id, Item newData) {
-        Item itemInDatabase = readById(id);
-        itemInDatabase.setId(newData.getId());
+    public Item updateById(Long itemId, Item newData) {
+        Item itemInDatabase = readById(itemId);
+        itemInDatabase.setItemId(newData.getItemId());
         itemInDatabase.setName(newData.getName());
         itemInDatabase.setDescription(newData.getDescription());
         itemInDatabase.setPrice(newData.getPrice());
@@ -48,7 +48,7 @@ public class ItemService {
         return item;
     }
 
-    public Item deleteById(Long id) {
-        return delete(readById(id));
+    public Item deleteById(Long itemId) {
+        return delete(readById(itemId));
     }
 }
