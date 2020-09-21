@@ -7,7 +7,7 @@
 <head>
     <title>Food Truck</title>
    <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
+    <link href="<%=request.getContextPath()%>/main.css" rel="stylesheet" type="text/css" />
     <style>
         body {font-family: 'Jura';font-size: 22px;}
         h1 {border-bottom: 1px solid darkgoldenrod;}
