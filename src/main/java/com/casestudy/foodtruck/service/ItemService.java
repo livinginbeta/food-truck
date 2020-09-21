@@ -17,8 +17,8 @@ public class ItemService {
         this.itemRepository = itemRepository;
     }
 
-    public Item create(Item item) {
-        return itemRepository.save(item);
+    public Item create(Item itemToBeCreated) {
+        return itemRepository.save(itemToBeCreated);
     }
 
     public Item readById(Long itemId) {

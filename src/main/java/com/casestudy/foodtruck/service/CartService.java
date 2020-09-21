@@ -19,14 +19,14 @@ public class CartService {
     }
 
     public Cart create(Cart cartToBeCreated) {
-        Cart persistedCart = cartRepository.save(cartToBeCreated);
-        return persistedCart;
+        return cartRepository.save(cartToBeCreated);
     }
 
     public List<Cart> readAll() {
-        Iterable<Cart> cartIterable = cartRepository.findAll();
         List<Cart> cartList = new ArrayList<>();
-        cartIterable.forEach(cartList::add);
+        for(Cart cart: cartRepository.findAll()) {
+            cartList.add(cart);
+        }
         return cartList;
     }
 
@@ -37,20 +37,17 @@ public class CartService {
     public Cart updateById(Long cartId, Cart updatedData) {
         Cart cartInDb = readById(cartId);
         cartInDb.setCartId(updatedData.getCartId());
-        cartInDb.setItemId(updatedData.getItemId());
-        cartInDb.setQuantity(updatedData.getQuantity());
+        cartInDb.setCartItems(updatedData.getCartItems());
         cartInDb = cartRepository.save(cartInDb);
         return cartInDb;
     }
 
-    public Cart deleteById(Long cartId) {
-        Cart cartToBeDeleted = readById(cartId);
-        cartRepository.delete(cartToBeDeleted);
-        return cartToBeDeleted;
+    public Cart delete(Cart cart) {
+        cartRepository.delete(cart);
+        return cart;
     }
 
-
-
-
-
+    public Cart deleteById(Long cartId) {
+        return delete(readById(cartId));
+    }
 }

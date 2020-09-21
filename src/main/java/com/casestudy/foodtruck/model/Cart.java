@@ -2,7 +2,6 @@ package com.casestudy.foodtruck.model;
 
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -10,22 +9,18 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cartId;
-    private Long itemId;
-    private Integer quantity;
 
     @OneToMany
     @ElementCollection
-    private Set<Item> items;
+    private Set<CartItem> cartItems;
 
 
-    public Cart(Long cartId, Long itemId, Integer quantity) {
+    public Cart(Long cartId, Set<CartItem> cartItems) {
         this.cartId = cartId;
-        this.itemId = itemId;
-        this.quantity = quantity;
+        this.cartItems = cartItems;
     }
 
     public Cart() {
-
     }
 
     public Long getCartId() {
@@ -36,27 +31,11 @@ public class Cart {
         this.cartId = cartId;
     }
 
-    public Long getItemId() {
-        return itemId;
+    public Set<CartItem> getCartItems() {
+        return cartItems;
     }
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public Set<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(Set<Item> items) {
-        this.items = items;
+    public void setCartItems(Set<CartItem> cartItems) {
+        this.cartItems = cartItems;
     }
 }
