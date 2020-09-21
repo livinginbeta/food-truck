@@ -25,12 +25,13 @@ public class HomeController {
         return "menu_items";
     }
 
+    /*
     @GetMapping("/{itemId}")
     public String getItemById(Model model, @PathVariable Long itemId) {
         model.addAttribute("item", itemService.readById(itemId));
         return "item_page";
     }
-
+*/
 
     @GetMapping("/test")
     public String homepage() {

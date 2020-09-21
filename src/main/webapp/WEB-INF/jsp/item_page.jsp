@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
-                <div class="panel-heading"> ${item.name}<br> </div>
+                <div class="panel-heading"><strong>${item.name}</strong><br> </div>
                 <div class="panel-body">
                     ${item.description}<br>
                     <fmt:setLocale value = "en_US"/>
