@@ -21,6 +21,7 @@ public class ItemController {
         this.itemService = itemService;
     }
 
+
     @PostMapping("/create")
     public ResponseEntity<Item> create(@RequestBody Item itemToBeCreated) {
         return new ResponseEntity<>(itemService.create(itemToBeCreated), HttpStatus.CREATED);
@@ -39,11 +40,10 @@ public class ItemController {
     @PutMapping("/update/{itemId}")
     public ResponseEntity<Item> update(@PathVariable Long itemId, @RequestBody Item newData) {
         return new ResponseEntity<>(itemService.updateById(itemId, newData), HttpStatus.OK);
-        }
-
+    }
 
     @DeleteMapping("/delete/{itemId}")
         public ResponseEntity<Item> delete(@PathVariable Long itemId) {
         return new ResponseEntity<>(itemService.deleteById(itemId), HttpStatus.OK);
-        }
+    }
 }

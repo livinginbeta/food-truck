@@ -27,22 +27,22 @@ public class CartController {
         return new ResponseEntity<>(cartService.create(cartToBeCreated), HttpStatus.CREATED);
     }
 
-    @GetMapping("/{cartId}")
+    @GetMapping("/read/{cartId}")
     public ResponseEntity<Cart> readById(@PathVariable Long cartId) {
        return new ResponseEntity<>(cartService.readById(cartId), HttpStatus.OK);
     }
 
-    @GetMapping("/")
+    @GetMapping("/read/all")
     public ResponseEntity<List<Cart>> readAll() {
         return new ResponseEntity<>(cartService.readAll(), HttpStatus.OK);
     }
 
-    @PutMapping("/{cartId")
+    @PutMapping("/update/{cartId}")
     public ResponseEntity<Cart> updateById(@PathVariable Long cartId, @RequestBody Cart newData) {
         return new ResponseEntity<>(cartService.updateById(cartId, newData), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{cartId")
+    @DeleteMapping("/delete/{cartId}")
     public ResponseEntity<Cart> deleteById(@PathVariable Long cartId) {
         return new ResponseEntity<>(cartService.deleteById(cartId), HttpStatus.OK);
     }
