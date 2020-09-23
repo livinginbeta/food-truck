@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <%@ include file="header.jsp" %>
-    <title>TEST</title>
+    <title>Shopping Cart</title>
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
     <style>

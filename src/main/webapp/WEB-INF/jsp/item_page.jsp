@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <%@ include file="header.jsp" %>
-    <title>TEST</title>
+    <title>Donut Details</title>
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
     <style>
@@ -37,32 +37,16 @@
                 <%=CartItemService.readById(itemVariable)%>   --%>
 
                 <div class="panel-footer"> <button type="button" class="btn btn-primary btn-md"
-                                                   onClick="location.href='/addtocart/id/${item.itemId}'">Add To Cart</button></div>
+                                                   onClick="location.href='/addtocart/id/${item.itemId}'">Add To Cart</button>
+                <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><button type="button" class="btn btn-primary btn-md"
+                             onClick="location.href='/all'">Back To Donut List</button></div>
 
-                <div><button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/addtocart/${item.name}' ">Details</button> <!--<a href="CLICK HERE" /> -->
+                <div class="images">
+                    <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.jpg" width="300" height="300"/>
+                    <img src="${pageContext.request.contextPath}/images/nutrition/${item.itemId}.jpg" width="300" height="300"/>
+
                 </div>
-    <!---------------------------------------------------------------------------------->
-                <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/cart/addtocart/${item.name}' ">LINK 1</button>
 
-                <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/cart/addtocart/id6/${item.itemId}' ">LINK 2</button>
-
-                <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/addtocart/${item.name}' ">LINK 3</button>
-
-                <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/addtocart/${item.name}' ">LINK 4</button>
-
-                <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/addtocart/${item.name}' ">LINK 5</button>
-
-                <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/addtocart/${item.name}' ">LINK 6</button>
-
-                <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/addtocart/${item.name}' ">LINK 7</button>
 
             </div>
         </div>
