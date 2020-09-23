@@ -23,19 +23,27 @@ public class HomeController {
     @Autowired
     private CartItemService cartItemService;
 
+    @Autowired
+    private CartService cartService;
 
     @GetMapping("/all")
     public String getAllItems(Model model) {
         model.addAttribute("items", itemService.readAll());
         return "menu_items";
     }
+    @RequestMapping(value="addtocart/{cartId}/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
+    public String addToCart(Model model, @PathVariable Long cartId, String itemName) {
+        model.addAttribute("cartItems", cartService.addToCart(cartId, itemName));
+
+        return "cart";
+    }
 
     ////////////////////Also in CartItemService
- //   @PostMapping("/addtocart/id/{itemId}")
-    //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
-    @RequestMapping(value="addtocart/id/{itemId}", method={RequestMethod.POST, RequestMethod.GET})
-    public String addToCart(Model model, @PathVariable Long itemId) {
-        model.addAttribute("cartItems", cartItemService.addToCart(itemId));
+// //   @PostMapping("/addtocart/id/{itemId}")
+//    //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
+//    @RequestMapping(value="addtocart/id/{itemId}", method={RequestMethod.POST, RequestMethod.GET})
+//    public String addToCart(Model model, @PathVariable Long itemId) {
+//        model.addAttribute("cartItems", cartItemService.addToCart(itemId));
 
 
 
@@ -47,16 +55,16 @@ public class HomeController {
 //        Cart cartToReceiveItem = cartService.readById(1L);
  //       cartToReceiveItem.addToCart(itemToAddToCart);
  //       cartToReceiveItem = cartService.updateById(1L, cartToReceiveItem);
-        return "cart";
-    }
+//        return "cart";
+//    }
 
     /////MEH......
- ///   @PostMapping("/addtocart/{itemName}")
-    @RequestMapping(value="addtocart/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
-    public String addToCart(Model model, @PathVariable String itemName) {
-        model.addAttribute("cartItems", cartItemService.addByName(itemName));
-        return "cart";
-    }
+// ///   @PostMapping("/addtocart/{itemName}")
+//    @RequestMapping(value="addtocart/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
+//    public String addToCart(Model model, @PathVariable String itemName) {
+//        model.addAttribute("cartItems", cartService.addByName(itemName));
+//        return "cart";
+//    }
 ////////////////////////////////////////
 
     @GetMapping("/{itemId}")
