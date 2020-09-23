@@ -4,7 +4,11 @@ package com.casestudy.foodtruck.service;
 import com.casestudy.foodtruck.model.Cart;
 import com.casestudy.foodtruck.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,7 @@ public class CartService {
     public Cart create(Cart cartToBeCreated) {
         return cartRepository.save(cartToBeCreated);
     }
+
 
     public List<Cart> readAll() {
         List<Cart> cartList = new ArrayList<>();

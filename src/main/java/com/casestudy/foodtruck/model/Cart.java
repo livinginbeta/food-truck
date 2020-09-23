@@ -11,7 +11,7 @@ public class Cart {
     private Long cartId;
 
     @OneToMany
-    @ElementCollection
+   // @ElementCollection
     private Set<CartItem> cartItems;
 
 
@@ -37,5 +37,9 @@ public class Cart {
 
     public void setCartItems(Set<CartItem> cartItems) {
         this.cartItems = cartItems;
+    }
+
+    public void addToCart(CartItem itemToAddToCart) {
+        getCartItems().add(itemToAddToCart);
     }
 }

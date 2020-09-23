@@ -47,4 +47,8 @@ public class CartItem {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    public String getName() {
+        return item.getName();
+    }
 }

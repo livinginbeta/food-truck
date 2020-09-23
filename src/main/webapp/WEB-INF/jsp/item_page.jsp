@@ -1,3 +1,5 @@
+<%@ page import="com.casestudy.foodtruck.model.CartItem" %>
+<%@ page import="com.casestudy.foodtruck.service.CartItemService" %>
 <%@ page language="java" contentType="text/html; ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 
@@ -30,8 +32,37 @@
                     <fmt:formatNumber value = "${item.price}" type = "currency"/> each<br>
 
                 </div>
+
+                <%--<%! Long itemVariable = item.itemId %>
+                <%=CartItemService.readById(itemVariable)%>   --%>
+
                 <div class="panel-footer"> <button type="button" class="btn btn-primary btn-md"
-                                                   onClick="location.href=' ' ">Add To Cart</button></div>
+                                                   onClick="location.href='/addtocart/id/${item.itemId}'">Add To Cart</button></div>
+
+                <div><button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/addtocart/${item.name}' ">Details</button> <!--<a href="CLICK HERE" /> -->
+                </div>
+    <!---------------------------------------------------------------------------------->
+                <button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/cart/addtocart/${item.name}' ">LINK 1</button>
+
+                <button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/cart/addtocart/id/${item.itemId}' ">LINK 2</button>
+
+                <button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/addtocart/${item.name}' ">LINK 3</button>
+
+                <button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/addtocart/${item.name}' ">LINK 4</button>
+
+                <button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/addtocart/${item.name}' ">LINK 5</button>
+
+                <button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/addtocart/${item.name}' ">LINK 6</button>
+
+                <button type="button" class="btn btn-primary btn-md"
+                        onClick="location.href='/addtocart/${item.name}' ">LINK 7</button>
 
             </div>
         </div>

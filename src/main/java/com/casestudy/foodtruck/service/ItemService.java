@@ -25,6 +25,14 @@ public class ItemService {
         return itemRepository.findById(itemId).get();
     }
 
+    public Item readByName(String itemName) {
+        return readAll()
+                .stream()
+                .filter(item -> item.getName().equals(itemName))
+                .findFirst()
+                .get();
+    }
+
     public List<Item> readAll() {
         List<Item> itemList = new ArrayList<>();
         for(Item item: itemRepository.findAll()) {
