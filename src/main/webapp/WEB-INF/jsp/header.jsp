@@ -24,8 +24,8 @@
     <div class="container">
         <div id="navbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/all">Home</a></li>
-                <li><a href="/menu/read/all">Donuts & Merchandise</a></li>
+                <li class="active"><a href="/menu/read/all">Home</a></li>
+                <li><a href="/all">Donuts</a></li>
                 <li><a href="/cart/read/all">Shopping Cart</a></li>
                 <li><a href="/menu/read/2">About</a></li>
             </ul>

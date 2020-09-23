@@ -32,7 +32,9 @@
 
         </div>
         <div class="panel-footer"> <button type="button" class="btn btn-primary btn-md"
-                                           onClick="location.href='/${item.itemId}' ">Details</button></div>
+               onClick="location.href='/${item.itemId}' ">Details</button> <span> &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><button type="button" class="btn btn-primary btn-md"
+                                                                                                                                                                      onClick="location.href='/addtocart/id/${item.itemId}'">Add To Cart</button></div>
         </c:forEach>
     </div>
 </div>

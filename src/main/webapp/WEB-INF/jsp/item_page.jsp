@@ -47,7 +47,7 @@
                         onClick="location.href='/cart/addtocart/${item.name}' ">LINK 1</button>
 
                 <button type="button" class="btn btn-primary btn-md"
-                        onClick="location.href='/cart/addtocart/id/${item.itemId}' ">LINK 2</button>
+                        onClick="location.href='/cart/addtocart/id6/${item.itemId}' ">LINK 2</button>
 
                 <button type="button" class="btn btn-primary btn-md"
                         onClick="location.href='/addtocart/${item.name}' ">LINK 3</button>

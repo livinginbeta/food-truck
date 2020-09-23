@@ -32,6 +32,7 @@ public class HomeController {
 
     ////////////////////Also in CartItemService
  //   @PostMapping("/addtocart/id/{itemId}")
+    //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
     @RequestMapping(value="addtocart/id/{itemId}", method={RequestMethod.POST, RequestMethod.GET})
     public String addToCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.addToCart(itemId));
