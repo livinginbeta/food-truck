@@ -2,6 +2,7 @@ package com.casestudy.foodtruck.model;
 
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,11 +12,11 @@ public class Cart {
     private Long cartId;
 
     @OneToMany
-   // @ElementCollection
-    private Set<CartItem> cartItems;
+    @ElementCollection
+    private List<CartItem> cartItems;
 
 
-    public Cart(Long cartId, Set<CartItem> cartItems) {
+    public Cart(Long cartId, List<CartItem> cartItems) {
         this.cartId = cartId;
         this.cartItems = cartItems;
     }
@@ -31,15 +32,31 @@ public class Cart {
         this.cartId = cartId;
     }
 
-    public Set<CartItem> getCartItems() {
+    public List<CartItem> getCartItems() {
         return cartItems;
     }
 
-    public void setCartItems(Set<CartItem> cartItems) {
+    public void setCartItems(List<CartItem> cartItems) {
         this.cartItems = cartItems;
     }
 
     public void addToCart(CartItem itemToAddToCart) {
         getCartItems().add(itemToAddToCart);
     }
+
+    public boolean contains(String itemName) {
+        return getCartItems().stream()
+                .filter(cartItem -> cartItem.getName().equals(itemName))
+                .findAny()
+                .isPresent();
+    }
+
+    public CartItem getItemByName(String itemName) {
+        return getCartItems().stream()
+                .filter(cartItem -> cartItem.getName().equals(itemName))
+                .findFirst()
+                .get();
+
+    }
+
 }

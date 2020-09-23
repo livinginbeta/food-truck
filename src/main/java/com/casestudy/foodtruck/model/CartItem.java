@@ -48,6 +48,10 @@ public class CartItem {
         this.quantity = quantity;
     }
 
+    public void increment() {
+        setQuantity(getQuantity() + 1);
+    }
+
     public String getName() {
         return item.getName();
     }

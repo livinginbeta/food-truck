@@ -37,6 +37,9 @@ public class HomeController {
     public String addToCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.addToCart(itemId));
 
+
+
+
  //       CartItem itemToAddToCart = cartItemService.readById(itemId);
  //       CartService cartService = null;   /////////////////////////
   //  --    Cart cartToReceiveItem = cartService.readById(cartId);

@@ -42,12 +42,22 @@ public class CartItemService {
                 .get();
     }
 
-//////////updated
+            ///UPDATED CODE TO INFLUENCE QUANTITY
     public CartItem addToCart(Long itemId) {
         CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(),1));
         return cartItemRepository.save(newCartItem);
 
     }
+
+
+   /* SAVE ORIGINAL
+    public CartItem addToCart(Long itemId) {
+        CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(),1));
+        return cartItemRepository.save(newCartItem);
+
+    }
+
+    */
 
 
     public CartItem addByName(String itemName) {
