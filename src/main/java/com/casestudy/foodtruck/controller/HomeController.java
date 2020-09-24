@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @ControllerAdvice ///Maybe.... ?
 @RequestMapping("/")
@@ -30,6 +32,7 @@ public class HomeController {
     @GetMapping("/all")
     public String getAllItems(Model model) {
         model.addAttribute("items", itemService.readAll());
+        model.addAttribute("cartItems", cartItemService.readAll());
         return "menu_items";
     }
 

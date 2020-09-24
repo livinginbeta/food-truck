@@ -27,6 +27,18 @@
 
 <div class="container">
     <div class="row">
+
+        <c:forEach items="${cartItems}" var="cartItem">
+            <tr>
+                <td>"ITEM"${cartItem.item}</td><br>
+                <td>"NAME"${cartItem.item.name}</td><br>
+                <td>"ITEMID"${cartItem.item.itemId}</td><br>
+                <td>"PRICE"${cartItem.item.price}</td><br>
+                <td>"DESCRIPTION"${cartItem.item.description}</td><br>
+                <td>"QUANTITY"${cartItem.quantity}</td><br>
+            </tr>
+        </c:forEach>
+
         <c:forEach items="${items}" var="item">  <!----------------------------->
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
