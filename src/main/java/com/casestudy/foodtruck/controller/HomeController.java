@@ -52,21 +52,20 @@ public class HomeController {
     ////////////////////Also in CartItemService
 //         //   @PostMapping("/addtocart/id/{itemId}")
     //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
-    @RequestMapping(value="/addtocart/id/{itemId}", method={RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "/addtocart/id/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
     public String addToCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.addToCart(itemId));
         return "redirect:/all"; //return "menu_items";   ///"cart"
     }
 
 
-
- //       CartItem itemToAddToCart = cartItemService.readById(itemId);
- //       CartService cartService = null;   /////////////////////////
-  //  --    Cart cartToReceiveItem = cartService.readById(cartId);
-  //  --    Long cartId=1L;
+    //       CartItem itemToAddToCart = cartItemService.readById(itemId);
+    //       CartService cartService = null;   /////////////////////////
+    //  --    Cart cartToReceiveItem = cartService.readById(cartId);
+    //  --    Long cartId=1L;
 //        Cart cartToReceiveItem = cartService.readById(1L);
- //       cartToReceiveItem.addToCart(itemToAddToCart);
- //       cartToReceiveItem = cartService.updateById(1L, cartToReceiveItem);
+    //       cartToReceiveItem.addToCart(itemToAddToCart);
+    //       cartToReceiveItem = cartService.updateById(1L, cartToReceiveItem);
 //        return "cart";
 //    }
 

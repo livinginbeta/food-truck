@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class CartItem {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartItemId;
 
     @ManyToOne
@@ -20,7 +20,7 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public CartItem(){
+    public CartItem() {
 
     }
 
@@ -52,8 +52,12 @@ public class CartItem {
         setQuantity(getQuantity() + 1);
     }
 
+    public void decrement() {
+        setQuantity(getQuantity() - 1);
+    }
+
     public String getName() {
-     return item.getName();
+        return item.getName();
     }
 
 //    public boolean contains(String itemName) {

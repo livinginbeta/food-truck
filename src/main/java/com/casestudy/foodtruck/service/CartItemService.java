@@ -45,13 +45,13 @@ public class CartItemService {
     ///UPDATED CODE TO MODIFY QUANTITY
     public CartItem addToCart(Long itemId) {
         String itemName = itemRepository.findById(itemId).get().getName();
-        if(readByName(itemName) != null) {
-                readByName(itemName).increment();
+        if (readByName(itemName) != null) {
+            readByName(itemName).increment();
             CartItem cartItemToUpdate = readByName(itemName);
-                updateById(cartItemToUpdate.getCartItemId(), cartItemToUpdate);
+            updateById(cartItemToUpdate.getCartItemId(), cartItemToUpdate);
             return cartItemRepository.save(cartItemToUpdate);
         }
-        CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(),1));
+        CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(), 1));
         return cartItemRepository.save(newCartItem);
     }
 
@@ -88,7 +88,7 @@ public class CartItemService {
 
 
     public CartItem addByName(String itemName) {
-        CartItem newCartItem = create(new CartItem(null, itemService.readByName(itemName),1));
+        CartItem newCartItem = create(new CartItem(null, itemService.readByName(itemName), 1));
         return cartItemRepository.save(newCartItem);
     }
 
@@ -127,7 +127,7 @@ public class CartItemService {
 
     public List<CartItem> readAll() {
         List<CartItem> cartItemList = new ArrayList<>();
-        for(CartItem cartItem : cartItemRepository.findAll()) {
+        for (CartItem cartItem : cartItemRepository.findAll()) {
             cartItemList.add(cartItem);
         }
         return cartItemList;

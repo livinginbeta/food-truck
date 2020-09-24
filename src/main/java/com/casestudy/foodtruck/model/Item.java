@@ -11,8 +11,8 @@ public class Item {
     private String description;
     private Double price;
 
- //   @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE})
- //   private Cart cart;
+    //   @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE})
+    //   private Cart cart;
 
 
     public Item(Long itemId, String name, String description, Double price) {
@@ -22,7 +22,7 @@ public class Item {
         this.price = price;
     }
 
-    public Item(){
+    public Item() {
     }
 
     public Long getItemId() {

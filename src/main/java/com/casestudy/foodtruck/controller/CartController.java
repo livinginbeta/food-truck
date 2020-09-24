@@ -23,13 +23,13 @@ public class CartController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Cart> create(Cart cartToBeCreated){
+    public ResponseEntity<Cart> create(Cart cartToBeCreated) {
         return new ResponseEntity<>(cartService.create(cartToBeCreated), HttpStatus.CREATED);
     }
 
     @GetMapping("/read/{cartId}")
     public ResponseEntity<Cart> readById(@PathVariable Long cartId) {
-       return new ResponseEntity<>(cartService.readById(cartId), HttpStatus.OK);
+        return new ResponseEntity<>(cartService.readById(cartId), HttpStatus.OK);
     }
 
     @GetMapping("/read/all")

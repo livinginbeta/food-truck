@@ -33,8 +33,6 @@ public class CartItemController {
     }
 
 
-
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     @PostMapping("/addtocart/{name}")  //removed cartId
     public ResponseEntity<Cart> addToCart(@PathVariable String name) {
@@ -67,15 +65,15 @@ public class CartItemController {
     public ResponseEntity<CartItem> readById(@PathVariable Long cartItemId) {
         return new ResponseEntity<>(cartItemService.readById(cartItemId), HttpStatus.OK);
     }
-/////////////////////////////////ADD BY ID...
+
+    /////////////////////////////////ADD BY ID...
     @PostMapping("/addtocart/id/{itemId}")
     public ResponseEntity<CartItem> addToCart(@RequestBody long itemId) {
         return new ResponseEntity<>(cartItemService.addToCart(itemId), HttpStatus.CREATED);
     }
 
 
-
-        @PutMapping("/update/{cartItemId}")
+    @PutMapping("/update/{cartItemId}")
     public ResponseEntity<CartItem> updateById(@PathVariable Long cartItemId, @RequestBody CartItem newData) {
         return new ResponseEntity<>(cartItemService.updateById(cartItemId, newData), HttpStatus.OK);
     }
@@ -84,28 +82,6 @@ public class CartItemController {
     public ResponseEntity<CartItem> delete(@PathVariable Long cartItemId) {
         return new ResponseEntity<>(cartItemService.deleteById(cartItemId), HttpStatus.OK);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

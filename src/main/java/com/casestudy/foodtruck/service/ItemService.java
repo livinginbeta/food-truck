@@ -13,7 +13,7 @@ public class ItemService {
     private ItemRepository itemRepository;
 
     @Autowired
-    public ItemService (ItemRepository itemRepository) {
+    public ItemService(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
 
@@ -35,7 +35,7 @@ public class ItemService {
 
     public List<Item> readAll() {
         List<Item> itemList = new ArrayList<>();
-        for(Item item: itemRepository.findAll()) {
+        for (Item item : itemRepository.findAll()) {
             itemList.add(item);
         }
         return itemList;
