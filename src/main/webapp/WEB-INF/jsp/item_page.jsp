@@ -13,7 +13,7 @@
     <%@ include file="header.jsp" %>
     <title>Donut Details</title>
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/stylesheets/main.css">
     <style>
         body {
             font-family: 'Jura';

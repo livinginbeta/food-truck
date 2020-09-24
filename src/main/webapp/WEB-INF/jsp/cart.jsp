@@ -4,6 +4,14 @@
 
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@page import="com.casestudy.foodtruck.service.CartItemService"%>
+<%@page import="com.casestudy.foodtruck.repository.CartItemRepository"%>
+<%@page import="com.casestudy.foodtruck.model.Cart"%>
+<%@page import="com.casestudy.foodtruck.service.CartService"%>
+<%@page import="com.casestudy.foodtruck.repository.CartRepository"%>
+<%@page import="com.casestudy.foodtruck.model.CartItem"%>
+
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
@@ -11,7 +19,7 @@
     <%@ include file="header.jsp" %>
     <title>Shopping Cart</title>
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/stylesheets/main.css">
     <style>
         body {
             font-family: 'Jura';
@@ -27,6 +35,21 @@
 
 <div class="container">
     <div class="row">
+
+        <c:forEach items="${cartItems}" var="cartItem">
+            <tr>
+                <td>"ITEM"${cartItem.item}</td><br>
+                <td>"NAME"${cartItem.item.name}</td><br>
+                <td>"ITEMID"${cartItem.item.itemId}</td><br>
+                <td>"PRICE"${cartItem.item.price}</td><br>
+                <td>"DESCRIPTION"${cartItem.item.description}</td><br>
+                <td>"QUANTITY"${cartItem.quantity}</td><br>
+            </tr>
+        </c:forEach>
+
+        <%!CartService cartItems;%>
+        <%=cartItems.readAll()%>
+
         <c:forEach items="${cartItems}" var="cartItem">  <!------------------------>
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>

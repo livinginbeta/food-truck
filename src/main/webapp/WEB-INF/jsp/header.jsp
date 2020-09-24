@@ -8,7 +8,7 @@
     <!--  <title>Dave's Donuts</title>  -->
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
     <%--  <link href="<%=request.getContextPath()%>/main.css" rel="stylesheet" type="text/css" /> --%>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/sytlesheets/main.css">
     <style>
         body {
             font-family: 'Jura';
