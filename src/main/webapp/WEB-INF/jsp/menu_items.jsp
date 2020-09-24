@@ -25,7 +25,11 @@
 <div class="container">
     <div class="row">
 
+<<<<<<< HEAD
       <%--  <c:forEach items="${cartItems}" var="cartItem">
+=======
+        <c:forEach items="${cartItems}" var="cartItem">
+>>>>>>> 6fa2df6b4ca81a5e128012af9a793448fb2dc332
             <tr>
                 <td>"ITEM"${cartItem.item}</td><br>
                 <td>"NAME"${cartItem.item.name}</td><br>
@@ -34,8 +38,13 @@
                 <td>"DESCRIPTION"${cartItem.item.description}</td><br>
                 <td>"QUANTITY"${cartItem.quantity}</td><br>
             </tr>
+<<<<<<< HEAD
         </c:forEach>   --%>
           <c:set var="count" value="0" scope="page" />
+=======
+        </c:forEach>
+
+>>>>>>> 6fa2df6b4ca81a5e128012af9a793448fb2dc332
         <c:forEach items="${items}" var="item">  <!----------------------------->
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
