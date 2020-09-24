@@ -30,6 +30,7 @@ public class HomeController {
     @GetMapping("/all")
     public String getAllItems(Model model) {
         model.addAttribute("items", itemService.readAll());
+        model.addAttribute("cartItems", cartItemService.readAll());
         return "menu_items";
     }
 
