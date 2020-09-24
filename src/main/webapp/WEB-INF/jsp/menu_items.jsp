@@ -25,7 +25,7 @@
 <div class="container">
     <div class="row">
 
-<<<<<<< HEAD
+
       <%--  <c:forEach items="${cartItems}" var="cartItem">
 =======
         <c:forEach items="${cartItems}" var="cartItem">
@@ -38,13 +38,12 @@
                 <td>"DESCRIPTION"${cartItem.item.description}</td><br>
                 <td>"QUANTITY"${cartItem.quantity}</td><br>
             </tr>
-<<<<<<< HEAD
+
         </c:forEach>   --%>
           <c:set var="count" value="0" scope="page" />
-=======
-        </c:forEach>
+     <%--   </c:forEach> --%>
 
->>>>>>> 6fa2df6b4ca81a5e128012af9a793448fb2dc332
+
         <c:forEach items="${items}" var="item">  <!----------------------------->
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
@@ -73,11 +72,26 @@
                             <td>"ITEMID"${cartItem.item.itemId}</td><br>
                             <td>"PRICE"${cartItem.item.price}</td><br>
                             <td>"DESCRIPTION"${cartItem.item.description}</td><br> -->
+
                             ${cartItem.getQuantity()} in cart
+
+                        <%--
+                        <c:choose>
+                            <c:when test="${(cartItem.getQuantity() <= 1)}">
+                                ${cartItem.getQuantity()} in cart
+                            </c:when>
+                            <c:otherwise>
+                                0 in cart
+                            </c:otherwise>
+                        </c:choose>
+                        --%>
                     <!--    </tr>-->
                         <c:set var="count" value="${count + 1}" scope="page" />
                     </c:forEach><button type="button" class="btn btn-primary btn-md"
                                         onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;</button>
+
+                    <button type="button" class="btn btn-primary btn-md"
+                            onClick="location.href='/clearcart/id/${item.itemId}'">Clear</button>
                     </c:forEach>
                 </div>
 

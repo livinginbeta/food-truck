@@ -78,7 +78,13 @@ public class CartItemService {
         }
         return null;
     }
-
+    
+    public CartItem clearCart(Long itemId) {
+        String itemName = itemRepository.findById(itemId).get().getName();
+        CartItem cartToClear = readByName(itemName);
+        cartToClear.setQuantity(0);
+        return cartItemRepository.save(cartToClear);
+    }
 
 /*
     ///UPDATED CODE TO MODIFY QUANTITY

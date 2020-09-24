@@ -54,22 +54,15 @@ public class HomeController {
         model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
         return "redirect:/all"; //return "menu_items";   ///"cart"
     }
-    //       CartItem itemToAddToCart = cartItemService.readById(itemId);
-    //       CartService cartService = null;   /////////////////////////
-    //  --    Cart cartToReceiveItem = cartService.readById(cartId);
-    //  --    Long cartId=1L;
-//        Cart cartToReceiveItem = cartService.readById(1L);
-    //       cartToReceiveItem.addToCart(itemToAddToCart);
-    //       cartToReceiveItem = cartService.updateById(1L, cartToReceiveItem);
-//        return "cart";
-//    }
-    /////MEH......
-// ///   @PostMapping("/addtocart/{itemName}")
-//    @RequestMapping(value="addtocart/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
-//    public String addToCart(Model model, @PathVariable String itemName) {
-//        model.addAttribute("cartItems", cartService.addByName(itemName));
-//        return "cart";
-//    }
+   
+    @GetMapping("/clearcart/id/{itemId}")
+    public String clearCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.clearCart(itemId));
+        return "redirect:/all";     }
+    
+    
+    
+    
 ////////////////////////////////////////
     @GetMapping("/{itemId}")
     public String getItemById(Model model, @PathVariable Long itemId) {
