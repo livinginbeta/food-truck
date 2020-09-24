@@ -46,6 +46,11 @@
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/addtocart/id/${item.itemId}'">Add To Cart
                     </button>
+                    <span> &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                    <button type="button" class="btn btn-primary btn-md"
+                            onClick="location.href='/removefromcart/id/${item.itemId}'">Remove From Cart
+                    </button>
                 </div>
                 </c:forEach>
             </div>

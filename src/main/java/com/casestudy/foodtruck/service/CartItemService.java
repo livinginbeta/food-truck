@@ -42,9 +42,10 @@ public class CartItemService {
                 .orElse(null);
     }
 
-    ///UPDATED CODE TO MODIFY QUANTITY
+    ///ADD QUANTITY TO CART
     public CartItem addToCart(Long itemId) {
         String itemName = itemRepository.findById(itemId).get().getName();
+
         if (readByName(itemName) != null) {
             readByName(itemName).increment();
             CartItem cartItemToUpdate = readByName(itemName);
@@ -53,6 +54,29 @@ public class CartItemService {
         }
         CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(), 1));
         return cartItemRepository.save(newCartItem);
+    }
+
+    //////REMOVE QUANTITY FROM CART
+    public CartItem removeFromCart(Long itemId) {
+        String itemName = itemRepository.findById(itemId).get().getName();
+
+        if(readByName(itemName).getQuantity() <= 0) {
+            readByName(itemName).setQuantity(0);
+            CartItem cartItemToUpdate = readByName(itemName);
+            return cartItemRepository.save(cartItemToUpdate);
+        }
+        if (readByName(itemName) != null || readByName(itemName).getQuantity() >= 2) {
+            readByName(itemName).decrement();
+            CartItem cartItemToUpdate = readByName(itemName);
+            updateById(cartItemToUpdate.getCartItemId(), cartItemToUpdate);
+            return cartItemRepository.save(cartItemToUpdate);
+        }
+        if(readByName(itemName).getQuantity() <= 1) {
+            CartItem cartItemToRemove = readByName(itemName);
+            delete(cartItemToRemove);
+            return cartItemToRemove;
+        }
+        return null;
     }
 
 

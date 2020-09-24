@@ -58,6 +58,14 @@ public class HomeController {
         return "redirect:/all"; //return "menu_items";   ///"cart"
     }
 
+    @RequestMapping(value = "/removefromcart/id/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
+    public String removeFromCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
+        return "redirect:/all"; //return "menu_items";   ///"cart"
+    }
+
+
+
 
     //       CartItem itemToAddToCart = cartItemService.readById(itemId);
     //       CartService cartService = null;   /////////////////////////
