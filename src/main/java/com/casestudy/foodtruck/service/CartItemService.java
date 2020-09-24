@@ -39,13 +39,28 @@ public class CartItemService {
                 .stream()
                 .filter(item -> item.getName().equals(itemName))
                 .findFirst()
-                .get();
+                .orElse(null);
     }
 
     ///UPDATED CODE TO MODIFY QUANTITY
     public CartItem addToCart(Long itemId) {
-    //    if(cartItemRepository.contains(itemRepository.findById(itemId))) {
-            if(cartItemRepository.existsById(itemId)) {
+        String itemName = itemRepository.findById(itemId).get().getName();
+        if(readByName(itemName) != null) {
+                readByName(itemName).increment();
+            CartItem cartItemToUpdate = readByName(itemName);
+                updateById(cartItemToUpdate.getCartItemId(), cartItemToUpdate);
+            return cartItemRepository.save(cartItemToUpdate);
+        }
+        CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(),1));
+        return cartItemRepository.save(newCartItem);
+    }
+
+
+/*
+    ///UPDATED CODE TO MODIFY QUANTITY
+    public CartItem addToCart(Long itemId) {
+        //    if(cartItemRepository.contains(itemRepository.findById(itemId))) {
+        if(cartItemRepository.existsById(itemId)) {
             //           CartItem cartItemToUpdate = readByName(itemRepository.findById(itemId).stream()
             //                  .filter(item -> item.getItemId().equals(itemId).getName());
             CartItem cartItemToUpdate = readById(itemId);
@@ -57,6 +72,9 @@ public class CartItemService {
         CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(),1));
         return cartItemRepository.save(newCartItem);
     }
+
+ */
+
 
 
    /* SAVE ORIGINAL
