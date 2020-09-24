@@ -42,11 +42,20 @@ public class CartItemService {
                 .get();
     }
 
-            ///UPDATED CODE TO INFLUENCE QUANTITY
+    ///UPDATED CODE TO MODIFY QUANTITY
     public CartItem addToCart(Long itemId) {
+    //    if(cartItemRepository.contains(itemRepository.findById(itemId))) {
+            if(cartItemRepository.existsById(itemId)) {
+            //           CartItem cartItemToUpdate = readByName(itemRepository.findById(itemId).stream()
+            //                  .filter(item -> item.getItemId().equals(itemId).getName());
+            CartItem cartItemToUpdate = readById(itemId);
+            cartItemToUpdate.increment();
+            return cartItemRepository.save(cartItemToUpdate);
+            //return cartItemToUpdate;
+        }
+
         CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(),1));
         return cartItemRepository.save(newCartItem);
-
     }
 
 
@@ -123,4 +132,5 @@ public class CartItemService {
     public CartItem deleteById(Long cartItemId) {
         return delete(readById(cartItemId));
     }
+
 }

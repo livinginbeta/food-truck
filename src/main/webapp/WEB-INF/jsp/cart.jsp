@@ -21,7 +21,7 @@
 
 <div class="container">
     <div class="row">
-  <%--      <c:forEach items="${cartItems}" var="cartItem">  <!----> --%>
+        <c:forEach items="${cartItems}" var="cartItem">  <!------------------------>
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
                 <div class="panel-heading"><strong>${item.name}</strong><br> </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="panel-footer"> <button type="button" class="btn btn-primary btn-md"
                                                    onClick="location.href='/${item.itemId}' ">Details</button></div>
-<%--               </c:forEach>     ---------------------------%>
+               </c:forEach>
          </div>
      </div>
  </div>

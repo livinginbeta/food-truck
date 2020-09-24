@@ -12,9 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@ControllerAdvice ///Maybe.... ?
 @RequestMapping("/")
 public class HomeController {
-
+//private Cart cart;
 
 
     @Autowired
@@ -31,20 +32,31 @@ public class HomeController {
         model.addAttribute("items", itemService.readAll());
         return "menu_items";
     }
-    @RequestMapping(value="addtocart/{cartId}/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
-    public String addToCart(Model model, @PathVariable Long cartId, String itemName) {
-        model.addAttribute("cartItems", cartService.addToCart(cartId, itemName));
 
+    @GetMapping("/shoppingcart")
+    public String getAllCartItems(Model model) {
+        model.addAttribute("items", cartItemService.readAll());
         return "cart";
     }
 
-    ////////////////////Also in CartItemService
-// //   @PostMapping("/addtocart/id/{itemId}")
-//    //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
-//    @RequestMapping(value="addtocart/id/{itemId}", method={RequestMethod.POST, RequestMethod.GET})
-//    public String addToCart(Model model, @PathVariable Long itemId) {
-//        model.addAttribute("cartItems", cartItemService.addToCart(itemId));
 
+/*    @RequestMapping(value="/addtocart/{cartId}/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
+    public String addToCart(Model model, @PathVariable Long cartId, String itemName) {
+    //    model.addAttribute("cart", cartService.addToCart(cartId, itemName));
+        model.addAttribute("cart", cart.getCartId());
+        return "cart";
+    }
+
+ */
+
+    ////////////////////Also in CartItemService
+//         //   @PostMapping("/addtocart/id/{itemId}")
+    //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
+    @RequestMapping(value="addtocart/id/{itemId}", method={RequestMethod.POST, RequestMethod.GET})
+    public String addToCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.addToCart(itemId));
+        return "redirect:/all"; //return "menu_items";   ///"cart"
+    }
 
 
 

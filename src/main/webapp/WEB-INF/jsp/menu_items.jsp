@@ -21,7 +21,7 @@
 
 <div class="container">
     <div class="row">
-        <c:forEach items="${items}" var="item">
+        <c:forEach items="${items}" var="item">  <!----------------------------->
 <div class="col-sm-4">
     <div class="panel panel-primary"><p></p>
         <div class="panel-heading"><strong>${item.name}</strong><br> </div>
@@ -34,7 +34,7 @@
         <div class="panel-footer"> <button type="button" class="btn btn-primary btn-md"
                onClick="location.href='/${item.itemId}' ">Details</button> <span> &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><button type="button" class="btn btn-primary btn-md"
-             onClick="location.href='/addtocart/${cart.cartId}/${item.name}'">Add To Cart</button></div>
+             onClick="location.href='/addtocart/id/${item.itemId}'">Add To Cart</button></div>
         </c:forEach>
     </div>
 </div>

@@ -53,6 +53,13 @@ public class CartItem {
     }
 
     public String getName() {
-        return item.getName();
+     return item.getName();
     }
+
+//    public boolean contains(String itemName) {
+//        return CartItemRepository().stream()
+//                .filter(cartItem -> cartItem.getName().equals(itemName))
+//                .findAny()
+//                .isPresent();
+//    }
 }

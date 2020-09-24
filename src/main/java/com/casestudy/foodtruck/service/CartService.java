@@ -64,7 +64,7 @@ public class CartService {
 
 
     /////////////////////////////////////////////////////////
-    ///UPDATED CODE TO INFLUENCE QUANTITY
+    ///UPDATED CODE TO MODIFY QUANTITY
     public Cart addToCart(Long cartId, String itemName) {
         Cart cartToAddTo = readById(cartId);
 
@@ -94,6 +94,11 @@ public class CartService {
 
     */
 
+
+ //   public CartItem addByName(String itemName) {
+ //       CartItem newCartItem = create(new CartItem(null, itemService.readByName(itemName), 1));
+ //       return cartItemRepository.save(newCartItem);
+ //   }
 
 
 }
