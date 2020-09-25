@@ -1,5 +1,6 @@
 package com.casestudy.foodtruck.model;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +13,8 @@ public class CartItem {
     private Item item;
 
     private Integer quantity;
+    
+    
 
 
     public CartItem(Long cartItemId, Item item, Integer quantity) {
@@ -59,6 +62,9 @@ public class CartItem {
     public String getName() {
         return item.getName();
     }
+    
+    
+    
 
 //    public boolean contains(String itemName) {
 //        return CartItemRepository().stream()

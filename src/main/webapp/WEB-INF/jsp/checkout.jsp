@@ -37,8 +37,16 @@
     <div class="row">
 
 
+
+
+
+
         <table width="100%">
+
+            <c:set var="total" scope="page" value="${0}"/>
             <c:forEach items="${cartItems}" var="cartItem">
+                <c:set var="subtotal" scope="page" value="${{cartItem.item.price * cartItem.quantity}}"/>
+
                 <tr>
                     <td>${cartItem.item.name}</td>
                     <td>${cartItem.quantity}</td>
@@ -61,7 +69,10 @@
                               onClick="location.href='/clearcart/sc/${cartItem.item.itemId}'">Clear</button></td>
                 </tr>
 
+
+                <c:set var="total" value="${total + cartItem.quantity}" />
             </c:forEach>
+
         </table>
         <p>
         </p>
@@ -70,8 +81,13 @@
         <p>
         </p>
         <h1></h1>
+
+
+
+
         <%--! Double total = cartItemRepository.count() * 1.00; --%>
-        <h2>Total:&nbsp;&nbsp;&nbsp;<fmt:formatNumber value="${cartItemRepository.count() * 1.00}" type="currency"/></h2>
+        ${cartItem.cart.getCartItems().size()}
+        <h2><p>Total: <fmt:formatNumber value="${total}" type="currency"/></h2>
 
 
 

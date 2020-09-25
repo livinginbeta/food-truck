@@ -59,4 +59,8 @@ public class Cart {
 
     }
 
+    public Integer getCartItemCount() {
+        return getCartItems().size();
+    }
+
 }

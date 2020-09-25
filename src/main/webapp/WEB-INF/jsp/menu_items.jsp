@@ -61,30 +61,15 @@
                         <!--------------------------------------------------------->
                         <span> &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+
                         <button type="button" class="btn btn-primary btn-md"
                                 onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;</button>
                         <c:forEach items="${cartItems}" var="cartItem" begin="${count}" end="${count}">
-                            <!--      <tr>
-                            <td>"ITEM"${cartItem.item}</td><br>
-                            <td>"NAME"${cartItem.item.name}</td><br>
-                            <td>"ITEMID"${cartItem.item.itemId}</td><br>
-                            <td>"PRICE"${cartItem.item.price}</td><br>
-                            <td>"DESCRIPTION"${cartItem.item.description}</td><br> -->
+
 
                             ${cartItem.getQuantity()} in cart
 
-                            <%--
-                            <c:choose>
-                                <c:when test="${(cartItem.getQuantity() <= 1)}">
-                                    ${cartItem.getQuantity()} in cart
-                                </c:when>
-                                <c:otherwise>
-                                    0 in cart
-                                </c:otherwise>
-                            </c:choose>
-                            --%>
-                            <!--    </tr>-->
-                            <c:set var="count" value="${count + 1}" scope="page" />
+                         <c:set var="count" value="${count + 1}" scope="page" />
                         </c:forEach><button type="button" class="btn btn-primary btn-md"
                                             onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;</button>
 
