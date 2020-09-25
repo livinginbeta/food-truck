@@ -1,3 +1,5 @@
+<%@ page import="com.casestudy.foodtruck.repository.CartItemRepository" %>
+<%@ page import="com.casestudy.foodtruck.service.CartItemService" %>
 <%@ page language="java" contentType="text/html; ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
@@ -21,14 +23,15 @@
     </style>
 </head>
 <body>
+<%! CartItemRepository cartItemRepository; %>
 
 <div class="container">
     <div class="row">
 
 
+
         <table>
           <c:forEach items="${cartItems}" var="cartItem">
-
               <tr>
 
                   <td>${cartItem.item.name}</td>
@@ -38,11 +41,40 @@
                   <td><fmt:formatNumber value="${cartItem.item.price}" type="currency"/></td>
                   <td> = </td>
                   <td> <fmt:formatNumber value="${cartItem.item.price * cartItem.quantity}" type="currency"/></td>
+                  <td><button type="button" class="btn btn-primary btn-md"
+                              onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;</button>
 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <button type="button" class="btn btn-primary btn-md"
+                              onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;</button>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <button type="button" class="btn btn-primary btn-md"
+                              onClick="location.href='/clearcart/id/${item.itemId}'">Clear</button></td>
               </tr>
 
           </c:forEach>
         </table>
+
+
+        <p>
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <h1></h1>
+        <%--! Double total = cartItemRepository.count() * 1.00; --%>
+
+        <h2>Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fmt:formatNumber value="${cartItemRepository.count() * 1.00}" type="currency"/></h2>
+
+
+
+
+<%--
+
         <c:set var="count" value="0" scope="page" />
 
 
@@ -69,26 +101,14 @@
                             onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;</button>
 
                     <c:forEach items="${cartItems}" var="cartItem" begin="${count}" end="${count}">
-                        <!--      <tr>
-                        <td>"ITEM"${cartItem.item}</td><br>
-                        <td>"NAME"${cartItem.item.name}</td><br>
-                        <td>"ITEMID"${cartItem.item.itemId}</td><br>
-                        <td>"PRICE"${cartItem.item.price}</td><br>
-                        <td>"DESCRIPTION"${cartItem.item.description}</td><br> -->
+
 
                         ${cartItem.getQuantity()} in cart
 
-                        <%--
-                        <c:choose>
-                            <c:when test="${(cartItem.getQuantity() <= 1)}">
-                                ${cartItem.getQuantity()} in cart
-                            </c:when>
-                            <c:otherwise>
-                                0 in cart
-                            </c:otherwise>
-                        </c:choose>
-                        --%>
-                        <!--    </tr>-->
+
+                        <button type="button" class="btn btn-primary btn-md"
+                                onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;</button>
+
                         <c:set var="count" value="${count + 1}" scope="page" />
                     </c:forEach><button type="button" class="btn btn-primary btn-md"
                                         onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;</button>
@@ -180,10 +200,10 @@
                             onClick="location.href='/${item.itemId}' ">Details
                     </button>
                 </div>
-                </c:forEach>
+                </c:forEach>  --%>
             </div>
         </div>
     </div>
 </div>
 </body>
-</html>  ---%>
+</html>  
