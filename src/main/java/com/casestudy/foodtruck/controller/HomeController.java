@@ -43,7 +43,6 @@ public class HomeController {
         }
      */
     ////////////////////Also in CartItemService
-//         //   @PostMapping("/addtocart/id/{itemId}")
     //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
     @RequestMapping(value = "/addtocart/id/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
     public String addToCart(Model model, @PathVariable Long itemId) {
@@ -59,12 +58,31 @@ public class HomeController {
     @GetMapping("/clearcart/id/{itemId}")
     public String clearCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.clearCart(itemId));
-        return "redirect:/all";     }
+        return "redirect:/all";     
+    }
     
-    
-    
-    
-////////////////////////////////////////
+    ///SHOPPING CART VERSIONS
+    //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
+    @RequestMapping(value = "/addtocart/sc/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
+    public String addToCheckoutCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.addToCart(itemId));
+        return "redirect:/checkout"; //return "menu_items";   ///"cart"
+    }
+    @RequestMapping(value = "/removefromcart/sc/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
+    public String removeFromCheckoutCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
+        return "redirect:/checkout"; //return "menu_items";   ///"cart"
+    }
+
+    @GetMapping("/clearcart/sc/{itemId}")
+    public String clearCheckoutCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.clearCart(itemId));
+        return "redirect:/checkout";
+    }
+
+
+
+    ////////////////////////////////////////
     @GetMapping("/{itemId}")
     public String getItemById(Model model, @PathVariable Long itemId) {
         model.addAttribute("item", itemService.readById(itemId));
