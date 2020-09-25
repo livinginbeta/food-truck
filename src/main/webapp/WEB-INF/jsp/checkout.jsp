@@ -37,36 +37,32 @@
     <div class="row">
 
 
-
-        <table>
-          <c:forEach items="${cartItems}" var="cartItem">
-              <tr>
-
-                  <td>${cartItem.item.name}</td>
-                  <td>${cartItem.quantity}</td>
-                  <td> X </td>
-
-                  <td><fmt:formatNumber value="${cartItem.item.price}" type="currency"/></td>
-                  <td> = </td>
-                  <td> <fmt:formatNumber value="${cartItem.item.price * cartItem.quantity}" type="currency"/></td>
-                  <td><button type="button" class="btn btn-primary btn-md"
+        <table width="100%">
+            <c:forEach items="${cartItems}" var="cartItem">
+                <tr>
+                    <td>${cartItem.item.name}</td>
+                    <td>${cartItem.quantity}</td>
+                    <td> X </td>
+                    <td><fmt:formatNumber value="${cartItem.item.price}" type="currency"/></td>
+                    <td> = </td>
+                    <td> <fmt:formatNumber value="${cartItem.item.price * cartItem.quantity}" type="currency"/></td>
+                    <td>&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-primary btn-md"
                               onClick="location.href='/removefromcart/sc/${cartItem.item.itemId}'">&nbsp;-&nbsp;</button>
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
 
                       <button type="button" class="btn btn-primary btn-md"
                               onClick="location.href='/addtocart/sc/${cartItem.item.itemId}'">&nbsp;+&nbsp;</button>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
 
                       <button type="button" class="btn btn-primary btn-md"
                               onClick="location.href='/clearcart/sc/${cartItem.item.itemId}'">Clear</button></td>
-              </tr>
+                </tr>
 
-          </c:forEach>
+            </c:forEach>
         </table>
-
-
         <p>
         </p>
         <p>
@@ -75,12 +71,12 @@
         </p>
         <h1></h1>
         <%--! Double total = cartItemRepository.count() * 1.00; --%>
-
-        <h2>Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fmt:formatNumber value="${cartItemRepository.count() * 1.00}" type="currency"/></h2>
-
+        <h2>Total:&nbsp;&nbsp;&nbsp;<fmt:formatNumber value="${cartItemRepository.count() * 1.00}" type="currency"/></h2>
 
 
-        </div>
+
+
+    </div>
     </div>
 </div>
 </body>

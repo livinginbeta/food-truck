@@ -33,7 +33,7 @@
                 <li class="active"><a href="/menu/read/all">Home</a></li>
                 <li><a href="/all">Donuts</a></li>
                 <li><a href="/checkout">Shopping Cart</a></li>
-                <li><a href="/cart/read/all">Raw List</a></li>
+       <!--         <li><a href="/cart/read/all">Raw List</a></li> -->
                 <li><a href="/menu/read/2">About</a></li>
             </ul>
         </div>

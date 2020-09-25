@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @Controller
 @ControllerAdvice ///Maybe.... ?
 @RequestMapping("/")
@@ -28,7 +26,6 @@ public class HomeController {
         model.addAttribute("cartItems", cartItemService.readAll());
         return "menu_items";
     }
-
     @GetMapping("/checkout")
     public String getAllCartItems(Model model) {
         model.addAttribute("items", itemService.readAll());
@@ -54,13 +51,13 @@ public class HomeController {
         model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
         return "redirect:/all"; //return "menu_items";   ///"cart"
     }
-   
+
     @GetMapping("/clearcart/id/{itemId}")
     public String clearCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.clearCart(itemId));
         return "redirect:/all";     
     }
-    
+
     ///SHOPPING CART VERSIONS
     //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
     @RequestMapping(value = "/addtocart/sc/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
