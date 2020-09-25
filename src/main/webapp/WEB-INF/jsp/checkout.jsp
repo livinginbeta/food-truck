@@ -43,9 +43,9 @@
 
         <table width="100%">
 
-            <c:set var="total" scope="page" value="${0}"/>
+            <c:set var="total" scope="session" value="${0}"/>
             <c:forEach items="${cartItems}" var="cartItem">
-                <c:set var="subtotal" scope="page" value="${{cartItem.item.price * cartItem.quantity}}"/>
+                <c:set var="subtotal" scope="session" value="${{cartItem.item.price * cartItem.quantity}}"/>
 
                 <tr>
                     <td>${cartItem.item.name}</td>
@@ -82,11 +82,11 @@
         </p>
         <h1></h1>
 
+        <div class="back_button"><button type="button" class="btn btn-primary btn-md"
+                                        onClick="location.href='/all'">Back To Donut List
+    </button></div>
 
 
-
-        <%--! Double total = cartItemRepository.count() * 1.00; --%>
-        ${cartItem.cart.getCartItems().size()}
         <h2><p>Total: <fmt:formatNumber value="${total}" type="currency"/></h2>
 
 
