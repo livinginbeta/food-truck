@@ -29,10 +29,11 @@ public class HomeController {
         return "menu_items";
     }
 
-    @GetMapping("/shoppingcart")
+    @GetMapping("/checkout")
     public String getAllCartItems(Model model) {
-        model.addAttribute("items", cartItemService.readAll());
-        return "cart";
+        model.addAttribute("items", itemService.readAll());
+        model.addAttribute("cartItems", cartItemService.readAll());
+        return "checkout";
     }
     /*    @RequestMapping(value="/addtocart/{cartId}/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
         public String addToCart(Model model, @PathVariable Long cartId, String itemName) {
