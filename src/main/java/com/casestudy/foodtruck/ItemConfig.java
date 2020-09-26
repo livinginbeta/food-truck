@@ -23,5 +23,7 @@ public class ItemConfig {
         itemService.create(new Item(6L, "Fritter", "Classic cake donut topped with homemade chocolate icing", 1.00));
         itemService.create(new Item(7L, "Powdered Donut", "Classic cake donut topped with homemade chocolate icing", 1.00));
         itemService.create(new Item(8L, "Old-Fashioned", "Classic cake donut topped with homemade chocolate icing", 1.00));
+        itemService.setupAll();
+        
     }
 }

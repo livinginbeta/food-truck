@@ -1,6 +1,9 @@
 package com.casestudy.foodtruck.service;
 
+import com.casestudy.foodtruck.model.CartItem;
 import com.casestudy.foodtruck.model.Item;
+import com.casestudy.foodtruck.repository.CartItemRepository;
+import com.casestudy.foodtruck.service.CartItemService;
 import com.casestudy.foodtruck.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,11 +13,15 @@ import java.util.List;
 
 @Service
 public class ItemService {
+    private CartItemService cartItemService;
+    private CartItemRepository cartItemRepository;
     private ItemRepository itemRepository;
 
     @Autowired
-    public ItemService(ItemRepository itemRepository) {
+    public ItemService(ItemRepository itemRepository, CartItemRepository cartItemRepository, CartItemService cartItemService) {
         this.itemRepository = itemRepository;
+        this.cartItemRepository = cartItemRepository;
+        this.cartItemService = cartItemService;
     }
 
     public Item create(Item itemToBeCreated) {
@@ -40,6 +47,17 @@ public class ItemService {
         }
         return itemList;
     }
+
+    public List<Item> setupAll() {
+        List<Item> itemList = new ArrayList<>();
+        for (Item item : itemRepository.findAll()) {
+            String itemName = item.getName();
+            CartItem newCartItem = cartItemService.create(new CartItem(null, readByName(itemName), 0));
+             cartItemRepository.save(newCartItem);
+        }
+        return null;
+    }
+        
 
     public Item updateById(Long itemId, Item newData) {
         Item itemInDatabase = readById(itemId);
