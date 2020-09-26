@@ -65,5 +65,9 @@
         </div>
     </div>
 </div>
+<p></p>
+<p></p>
+<p></p>
+<%@include file="footer.jsp"%>
 </body>
 </html>
