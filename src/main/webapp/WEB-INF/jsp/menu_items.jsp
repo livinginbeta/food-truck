@@ -66,7 +66,7 @@
                         <button type="button" class="btn btn-primary btn-md"
                                 onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;</button>
 
-                        <c:forEach items="${cartItems}" var="cartItem" begin="${count}" end="${count}">
+                        <c:forEach items="${cartItems}" var="cartItem" begin="${count}" end="${count}"><!--->
 
 
                             ${cartItem.getQuantity()} in cart

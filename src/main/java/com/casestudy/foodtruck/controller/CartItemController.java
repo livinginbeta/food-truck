@@ -68,7 +68,7 @@ public class CartItemController {
 
     /////////////////////////////////ADD BY ID...
     @PostMapping("/addtocart/id/{itemId}")
-    public ResponseEntity<CartItem> addToCart(@RequestBody long itemId) {
+    public ResponseEntity<CartItem> addToCart(@RequestBody Long itemId) {
         return new ResponseEntity<>(cartItemService.addToCart(itemId), HttpStatus.CREATED);
     }
 

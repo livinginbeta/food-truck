@@ -23,7 +23,7 @@ public class HomeController {
     @GetMapping("/all")
     public String getAllItems(Model model) {
         model.addAttribute("items", itemService.readAll());
-        model.addAttribute("cartItems", cartItemService.readAll());
+        model.addAttribute("cartItems", cartItemService.readAll()); ///allows display of items in cart
         return "menu_items";
     }
     @GetMapping("/checkout")

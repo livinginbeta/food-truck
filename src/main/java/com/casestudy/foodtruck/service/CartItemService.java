@@ -60,6 +60,16 @@ public class CartItemService {
     public CartItem removeFromCart(Long itemId) {
         String itemName = itemRepository.findById(itemId).get().getName();
 
+        try {
+            if(readByName(itemName).getQuantity() == null) {
+
+            }
+        }catch (Exception e) {
+            System.out.println("Null inventory now added as 0");
+            CartItem newCartItem = create(new CartItem(null, itemRepository.findById(itemId).get(), 0));
+            return cartItemRepository.save(newCartItem);
+            }
+
         if(readByName(itemName).getQuantity() <= 0) {
             readByName(itemName).setQuantity(0);
             CartItem cartItemToUpdate = readByName(itemName);

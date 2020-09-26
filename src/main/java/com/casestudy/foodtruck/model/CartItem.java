@@ -43,7 +43,7 @@ public class CartItem {
         this.item = item;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
