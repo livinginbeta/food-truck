@@ -47,6 +47,7 @@
             <c:forEach items="${cartItems}" var="cartItem">
                 <c:set var="subtotal" scope="session" value="${{cartItem.item.price * cartItem.quantity}}"/>
 
+                <c:if test="${cartItem.quantity>0}">
                 <tr>
                     <td>${cartItem.item.name}</td>
                     <td>${cartItem.quantity}</td>
@@ -69,7 +70,7 @@
                               onClick="location.href='/clearcart/sc/${cartItem.item.itemId}'">Clear</button></td>
                 </tr>
 
-
+                </c:if>
                 <c:set var="total" value="${total + cartItem.quantity}" />
             </c:forEach>
 
