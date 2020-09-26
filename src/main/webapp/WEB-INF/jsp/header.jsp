@@ -24,26 +24,23 @@
 <body>
 
 <div class="container text-center" style="background-color: #f1b614">
-  <!--  <h1>Dave's Donuts</h1> -->
-    <div class="logo">
-       <img src="${pageContext.request.contextPath}/images/logo/donutsLogo-orange2.png" width="800"
-                height="150"/>
-
-</div>
-
-<nav class="navbar navbar-inverse">
-    <div class="container">
-        <div id="navbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/menu/read/all">Home</a></li>
-                <li><a href="/all">Donuts</a></li>
-                <li><a href="/checkout">Shopping Cart</a></li>
-       <!--         <li><a href="/cart/read/all">Raw List</a></li> -->
-                <li><a href="/menu/read/2">About</a></li>
-            </ul>
-        </div>
+    <!--  <h1>Dave's Donuts</h1> -->
+    <div class="header-image">
+        <img src="${pageContext.request.contextPath}/images/logo/donutsLogo-orange2.png"  alt="Dave's Donuts logo"/>
     </div>
-</nav>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/menu/read/all">Home</a></li>
+                    <li><a href="/all">Donuts</a></li>
+                    <li><a href="/checkout">Shopping Cart</a></li>
+                    <li><a href="/menu/read/2">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>
 </body>
 </html>
