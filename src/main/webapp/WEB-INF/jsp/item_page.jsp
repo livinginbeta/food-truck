@@ -48,7 +48,7 @@
                     </button>
                     <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
                     <button type="button" class="btn btn-primary btn-md"
-                            onClick="location.href='/all'">Back To Donut List
+                            onClick="location.href='/all/#${itemId}'">Back To Donut List
                     </button>
                 </div>
 

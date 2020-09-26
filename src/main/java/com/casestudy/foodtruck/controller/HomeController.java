@@ -49,13 +49,13 @@ public class HomeController {
     @RequestMapping(value = "/removefromcart/id/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String removeFromCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
-        return "redirect:/all"; //return "menu_items";   ///"cart"
+        return "redirect:/all/#{itemId}"; //return "menu_items";   ///"cart"
     }
 
     @GetMapping("/clearcart/id/{itemId}")
     public String clearCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.clearCart(itemId));
-        return "redirect:/all";     
+        return "redirect:/all/#{itemId}";     
     }
 
     ///SHOPPING CART VERSIONS
