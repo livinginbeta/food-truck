@@ -48,6 +48,7 @@
 
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
+                <a name="${item.itemId}"></a>
                 <div class="panel-heading"><strong>${item.name}</strong><br></div>
                 <div class="panel-body">
                         ${item.description}<br>

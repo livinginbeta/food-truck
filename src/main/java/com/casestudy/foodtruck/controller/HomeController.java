@@ -44,7 +44,7 @@ public class HomeController {
     @RequestMapping(value = "/addtocart/id/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
     public String addToCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.addToCart(itemId));
-        return "redirect:/all"; //return "menu_items";   ///"cart"
+        return "redirect:/all/#{itemId}"; //return "menu_items";   ///"cart"
     }
     @RequestMapping(value = "/removefromcart/id/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String removeFromCart(Model model, @PathVariable Long itemId) {
