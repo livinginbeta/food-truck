@@ -44,6 +44,7 @@
 
 
             <c:forEach items="${items}" var="item">  <!----------------------------->
+
             <div class="col-sm-4">
                 <div class="panel panel-primary"><p></p>
                     <div class="panel-heading"><strong>${item.name}</strong><br></div>
@@ -64,13 +65,16 @@
 
                         <button type="button" class="btn btn-primary btn-md"
                                 onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;</button>
+
                         <c:forEach items="${cartItems}" var="cartItem" begin="${count}" end="${count}">
 
 
                             ${cartItem.getQuantity()} in cart
 
                          <c:set var="count" value="${count + 1}" scope="page" />
-                        </c:forEach><button type="button" class="btn btn-primary btn-md"
+                        </c:forEach>
+
+                        <button type="button" class="btn btn-primary btn-md"
                                             onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;</button>
 
                         <button type="button" class="btn btn-primary btn-md"

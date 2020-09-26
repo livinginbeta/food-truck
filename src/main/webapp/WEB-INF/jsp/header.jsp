@@ -22,8 +22,13 @@
     </style>
 </head>
 <body>
-<div class="container text-center">
-    <h1>Dave's Donuts</h1>
+
+<div class="container text-center" style="background-color: #f1b614">
+  <!--  <h1>Dave's Donuts</h1> -->
+    <div class="logo">
+       <img src="${pageContext.request.contextPath}/images/logo/donutsLogo-orange2.png" width="800"
+                height="150"/>
+
 </div>
 
 <nav class="navbar navbar-inverse">
@@ -39,6 +44,6 @@
         </div>
     </div>
 </nav>
-
+</div>
 </body>
 </html>

@@ -6,6 +6,15 @@ h2{
     color: #ff0000;
 }
 
+#header {
+    background-color: #f1b614;
+}
+
+.logo {
+    text-align: center;
+}
+
+
 /*placeholder nav from https://www.w3schools.com/csS/css_navbar_horizontal.asp*/
 
 ul {

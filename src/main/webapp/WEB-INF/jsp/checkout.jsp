@@ -82,6 +82,7 @@
         </p>
         <h1></h1>
 
+        <div class="total">
         <div class="back_button"><button type="button" class="btn btn-primary btn-md"
                                         onClick="location.href='/all'">Back To Donut List
     </button></div>
@@ -89,7 +90,12 @@
 
         <h2><p>Total: <fmt:formatNumber value="${total}" type="currency"/></h2>
 
-
+        </div>
+        <div class="printButton">
+            <p></p>
+            <p></p>
+            <p></p>
+            <button type="button" class="btn btn-primary btn-md" onClick="window.print();return false;"> Print This Page </button></div>
 
 
     </div>
