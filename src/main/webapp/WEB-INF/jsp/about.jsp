@@ -32,12 +32,12 @@
             <div class="panel panel-primary"><p></p>
 
 
-                <div class="panel-heading"><strong><h1>About</h1></strong><br>
+                <div class="panel-heading"><strong><h1>About</h1></strong>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere.
                         Fusce eu neque eget elit gravida placerat. Aliquam laoreet porttitor tristique. Aliquam nec ultricies enim. Donec hendrerit nisi dolor, at laoreet ipsum consectetur
-                        id. Cras id nunc rhoncus, rhoncus tortor lobortis, ullamcorper nunc. Vivamus et elit vitae dui ullamcorper mollis.  </p>
+                        id. Cras id nunc rhoncus, rhoncus tortor lobortis, ullamcorper nunc. Vivamus et elit vitae dui ullamcorper mollis.
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere.
                         Fusce eu neque eget elit gravida placerat. Aliquam laoreet porttitor tristique. Aliquam nec ultricies enim. Donec hendrerit nisi dolor, at laoreet ipsum consectetur id.
                         Cras id nunc rhoncus, rhoncus tortor lobortis, ullamcorper nunc. Vivamus et elit vitae dui ullamcorper mollis. </p>

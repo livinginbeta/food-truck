@@ -12,6 +12,7 @@
 <footer>
     <!-- footer of page begins here -->
     <div class="footer">
+        <hr>
         &copy 2020 David Yirchott
         | <a href="http://localhost:8080/menu/read/all" alt="Homepage" Title="Homepage">Home</a>
         | <a href="http://localhost:8080/all" alt="Donuts" Title="Donuts">Donuts</a>

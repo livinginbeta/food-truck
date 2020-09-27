@@ -1,9 +1,9 @@
 h1{
-    color:#0000FF;
+    color:#f1b614;
 }
 
 h2{
-    color: #ff0000;
+    color: #f1b614;
 }
 
 .center {
@@ -33,6 +33,10 @@ img.center {
     height: 188px;
     border: none;
 }
+hr {
+    border: 1px solid #f1b614;
+}
+
 
 
 /*placeholder nav from https://www.w3schools.com/csS/css_navbar_horizontal.asp*/
