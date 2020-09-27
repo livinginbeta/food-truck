@@ -32,6 +32,8 @@
 
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
+                <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" class="preview" width="150"
+                     height="150"/>
                 <a name="${item.itemId}"></a>
                 <div class="panel-heading"><strong>${item.name}</strong><br></div>
                 <div class="panel-body">
@@ -43,6 +45,7 @@
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/${item.itemId}' ">Details
                     </button>
+
                     <span> &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
                     <!--------------------------------------------------------->
@@ -69,6 +72,8 @@
                             onClick="location.href='/clearcart/id/${item.itemId}'">Clear
                     </button>
                     </c:forEach>
+                    <p></p>
+                    <p></p>
                 </div>
 
             </div>

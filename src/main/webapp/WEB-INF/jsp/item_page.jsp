@@ -47,7 +47,9 @@
                 </div>
                 <div class="panel-footer">
 
-
+                    <button type="button" class="btn btn-primary btn-md"
+                            onClick="location.href='/all'">Back To Donut List
+                    </button>
                     <span> &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
                     <!--------------------------------------------------------->

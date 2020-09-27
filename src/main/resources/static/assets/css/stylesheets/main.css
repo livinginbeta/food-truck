@@ -29,7 +29,7 @@ img.center {
 .printButton {
     width: 268px;
     height: 188px;
-    border: none;
+    border: 0px;
 
 }
 
@@ -37,7 +37,19 @@ hr {
     border: 1px solid #f1b614;
 }
 
+.images {
+    margin-top: 45px;
+    text-decoration: none;
+}
 
+.preview {
+    float: left;
+    clear: left;
+}
+
+.clearfix {
+    overflow: auto;
+}
 
 /*placeholder nav from https://www.w3schools.com/csS/css_navbar_horizontal.asp*/
 
