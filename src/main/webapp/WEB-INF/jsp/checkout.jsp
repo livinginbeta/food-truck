@@ -75,38 +75,38 @@
             </c:forEach>
 
         </table>
-        <p>
-        </p>
-        <p>
-        </p>
-        <p>
-        </p>
+        <p></p>
+        <p></p>
+        <p></p>
         <h1></h1>
 
-        <div class="total">
-        <div class="back_button"><button type="button" class="btn btn-primary btn-md"
+        <table width="100%">
+            <tr>
+                <td width="60%" align="right" valign="top">
+   
+                    <button type="button" class="btn btn-primary btn-md"
                                         onClick="location.href='/all'">Back To Donut List
-    </button></div>
-
+    </button>
+                    <p></p>
 
         <h2><p>Total: <fmt:formatNumber value="${total}" type="currency"/></h2>
 
-        </div>
+
+                </td>
+                <td width="40%" align="right">
         <div class="printButton">
-            <p></p>
-            <p></p>
-            <p></p>
             <button type="button" class="btn btn-primary btn-md"
                     onClick="window.print();return false;">
                 <img src="${pageContext.request.contextPath}/images/logo/print-blue.png"
                      alt="Print This Page" title="Print This Page" /></button></div>
 
+                </td>
+            </tr>
+        </table>
+
 
     </div>
     </div>
-<p></p>
-<p></p>
-<p></p>
 <%@include file="footer.jsp"%>
 </body>
 </html>
