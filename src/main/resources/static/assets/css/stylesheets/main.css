@@ -51,6 +51,14 @@ hr {
     overflow: auto;
 }
 
+.panel-heading {
+    font-weight: bold;
+}
+
+.panel-primary {
+    padding-bottom: 35px;
+}
+
 /*placeholder nav from https://www.w3schools.com/csS/css_navbar_horizontal.asp*/
 
 ul {

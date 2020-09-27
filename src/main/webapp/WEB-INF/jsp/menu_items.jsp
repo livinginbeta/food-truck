@@ -31,30 +31,29 @@
         <c:forEach items="${items}" var="item">  <!----------------------------->
         <a name="${item.itemId + 1}"></a>
         <div class="col-sm-4">
-            <div class="panel panel-primary"><p></p>
+            <!--< div class="panel panel-primary"> --><p></p>
+
                 <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" class="preview" width="150"
                      height="150"/>
 
-                <div class="panel-heading"><strong>${item.name}</strong><br></div>
-                <div class="panel-body">
+
+                <span class="panel-heading">${item.name}<br></span>
+
                         ${item.description}<br>
                     <fmt:setLocale value="en_US"/>
                     <fmt:formatNumber value="${item.price}" type="currency"/> each<br>
-                </div>
-                <div class="panel-footer">
+
+
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/${item.itemId}' ">Details
-                    </button>
+                    </button><br>
 
-                    <span> &nbsp;
+       <!--             <span> &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-                    <!--------------------------------------------------------->
+                    #########################################
                     <span> &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>  -->
 
-                    <button type="button" class="btn btn-primary btn-md"
-                            onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;
-                    </button>
 
                     <c:forEach items="${cartItems}" var="cartItem" begin="${count}" end="${count}"><!--->
 
@@ -63,6 +62,10 @@
 
                     <c:set var="count" value="${count + 1}" scope="page"/>
                     </c:forEach>
+
+            <button type="button" class="btn btn-primary btn-md"
+                    onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;
+            </button>
 
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;
@@ -74,7 +77,7 @@
                     </c:forEach>
                     <p></p>
                     <p></p>
-                </div>
+
 
             </div>
         </div>
