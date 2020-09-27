@@ -26,6 +26,14 @@ img.center {
 
 }
 
+.printButton {
+    position: absolute;
+    right: -20px;
+    width: 268px;
+    height: 188px;
+    border: none;
+}
+
 
 /*placeholder nav from https://www.w3schools.com/csS/css_navbar_horizontal.asp*/
 

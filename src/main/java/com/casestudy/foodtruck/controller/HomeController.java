@@ -32,6 +32,15 @@ public class HomeController {
         model.addAttribute("cartItems", cartItemService.readAll());
         return "checkout";
     }
+    @GetMapping("/index")
+    public String homepage(Model model) {
+        return "index";
+    }
+
+    @GetMapping("/about")
+    public String about(Model model) {
+        return "about";
+    }
     /*    @RequestMapping(value="/addtocart/{cartId}/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
         public String addToCart(Model model, @PathVariable Long cartId, String itemName) {
         //    model.addAttribute("cart", cartService.addToCart(cartId, itemName));

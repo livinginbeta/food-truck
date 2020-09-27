@@ -96,12 +96,14 @@
             <p></p>
             <p></p>
             <p></p>
-            <button type="button" class="btn btn-primary btn-md" onClick="window.print();return false;"> Print This Page </button></div>
+            <button type="button" class="btn btn-primary btn-md"
+                    onClick="window.print();return false;">
+                <img src="${pageContext.request.contextPath}/images/logo/print-blue.png"
+                     alt="Print This Page" title="Print This Page" /></button></div>
 
 
     </div>
     </div>
-</div>
 <p></p>
 <p></p>
 <p></p>
