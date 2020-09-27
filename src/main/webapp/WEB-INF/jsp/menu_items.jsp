@@ -29,12 +29,12 @@
 
 
         <c:forEach items="${items}" var="item">  <!----------------------------->
-
+        <a name="${item.itemId + 1}"></a>
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
                 <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" class="preview" width="150"
                      height="150"/>
-                <a name="${item.itemId}"></a>
+
                 <div class="panel-heading"><strong>${item.name}</strong><br></div>
                 <div class="panel-body">
                         ${item.description}<br>
