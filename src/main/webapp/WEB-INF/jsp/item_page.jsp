@@ -38,7 +38,7 @@
 
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
-                <div class="panel-heading"><strong>${item.name}</strong><br>
+                <div class="panel-heading">${item.name}<br>
                 </div>
                 <div class="panel-body">
                         ${item.description}<br>
@@ -48,7 +48,7 @@
                 <div class="panel-footer">
 
                     <button type="button" class="btn btn-primary btn-md"
-                            onClick="location.href='/all'">Back To Donut List
+                            onClick="location.href='/all/#${item.itemId}'">Back To Donut List
                     </button>
                     <span> &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
@@ -59,11 +59,6 @@
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;
                     </button>
-
-
-
-                    ${cartItem.getQuantity()} in cart
-
 
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;
