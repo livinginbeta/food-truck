@@ -84,9 +84,9 @@
 
 
     <div class="images">
-        <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.jpg" width="300"
+        <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" width="300"
              height="300"/>
-        <img src="${pageContext.request.contextPath}/images/nutrition/${item.itemId}.jpg" width="300"
+        <img src="${pageContext.request.contextPath}/images/nutrition/${item.itemId}.png" width="300"
              height="300"/>
 
     </div>

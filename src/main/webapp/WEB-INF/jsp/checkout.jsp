@@ -83,7 +83,7 @@
         <table width="100%">
             <tr>
                 <td width="60%" align="right" valign="top">
-   
+
                     <button type="button" class="btn btn-primary btn-md"
                                         onClick="location.href='/all'">Back To Donut List
     </button>
@@ -93,11 +93,11 @@
 
 
                 </td>
-                <td width="40%" align="right">
+            <td width="40%" align="right">
         <div class="printButton">
             <button type="button" class="btn btn-primary btn-md"
                     onClick="window.print();return false;">
-                <img src="${pageContext.request.contextPath}/images/logo/print-blue.png"
+                <img src="${pageContext.request.contextPath}/images/logo/print_on_white.png"
                      alt="Print This Page" title="Print This Page" /></button></div>
 
                 </td>
