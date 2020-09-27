@@ -33,8 +33,8 @@
         <div class="col-sm-4">
             <!--< div class="panel panel-primary"> --><p></p>
 
-                <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" class="preview" width="150"
-                     height="150"/>
+                <a href="${pageContext.request.contextPath}/${item.itemId}"><img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" class="preview" width="150"
+                    height="150"/></a>
 
 
                 <span class="panel-heading">${item.name}<br></span>
@@ -45,7 +45,7 @@
 
 
                     <button type="button" class="btn btn-primary btn-md"
-                            onClick="location.href='/${item.itemId}' ">Details
+                            onClick="location.href='/${item.itemId}'">Details
                     </button><br>
 
        <!--             <span> &nbsp;
