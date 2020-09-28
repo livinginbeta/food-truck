@@ -95,10 +95,10 @@
                 </td>
             <td width="40%" align="right">
         <div class="printButton">
-            <button type="button" class="btn btn-primary btn-md"
+            <a href="davidyirchott.com"
                     onClick="window.print();return false;">
                 <img src="${pageContext.request.contextPath}/images/logo/print_on_white.png"
-                     alt="Print This Page" title="Print This Page" /></button></div>
+                     alt="Print This Page" title="Print This Page" /></a></div>
 
                 </td>
             </tr>

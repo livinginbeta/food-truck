@@ -29,9 +29,8 @@ img.center {
 .printButton {
     width: 268px;
     height: 188px;
-    border: 0px;
+    border: none;
     right: -20px;
-
 }
 
 hr {
