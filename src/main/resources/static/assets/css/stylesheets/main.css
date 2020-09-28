@@ -65,6 +65,13 @@ hr {
     margin-right: 10px;
 }
 
+.empty {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    color: deeppink;
+}
+
 /*placeholder nav from https://www.w3schools.com/csS/css_navbar_horizontal.asp*/
 
 ul {

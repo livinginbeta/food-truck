@@ -32,7 +32,7 @@
             <div class="panel panel-primary"><p></p>
 
 
-                <div class="panel-heading"><strong><h1>About</h1></strong>
+                <div class="panel-heading"><h1>About</h1>
                 </div>
                 <div class="panel-body">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere.
