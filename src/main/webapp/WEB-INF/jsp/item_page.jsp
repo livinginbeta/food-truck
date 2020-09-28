@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
-<%@ page import="com.casestudy.foodtruck.model.CartItem" %>
-<%@ page import="com.casestudy.foodtruck.service.CartItemService" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -17,6 +15,7 @@
             font-family: 'Jura';
             font-size: 22px;
         }
+
         h1 {
             border-bottom: 1px solid darkgoldenrod;
         }
@@ -59,27 +58,14 @@
                 </div>
             </div>
         </div>
+        <div class="images">
+            <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" width="300"
+                 height="300"/>
+            <img src="${pageContext.request.contextPath}/images/nutrition/${item.itemId}.png" width="300"
+                 height="300"/>
+        </div>
     </div>
+    <%@include file="footer.jsp" %>
 </div>
-
-<div class="images">
-    <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" width="300"
-         height="300"/>
-    <img src="${pageContext.request.contextPath}/images/nutrition/${item.itemId}.png" width="300"
-         height="300"/>
-</div>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<%@include file="footer.jsp" %>
 </body>
 </html>

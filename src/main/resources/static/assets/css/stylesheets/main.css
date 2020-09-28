@@ -27,10 +27,14 @@ img.center {
 }
 
 .printButton {
-    width: 268px;
-    height: 188px;
+    width: 40%;
     border: none;
-    right: -20px;
+    text-align: left;
+    padding-left: 24px;
+}
+
+.checkout-page {
+    margin-bottom: 30px;
 }
 
 hr {
@@ -40,11 +44,13 @@ hr {
 .images {
     margin-top: 45px;
     text-decoration: none;
+    margin-bottom: 80px;
 }
 
 .preview {
     float: left;
     clear: left;
+    margin-right: 8px;
 }
 
 .clearfix {
@@ -57,6 +63,15 @@ hr {
 
 .panel-primary {
     padding-bottom: 35px;
+}
+
+.home-body {
+    margin-bottom: 20px;
+}
+
+.checkout-table {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .small-img {

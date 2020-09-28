@@ -1,5 +1,3 @@
-<%@ page import="com.casestudy.foodtruck.repository.CartItemRepository" %>
-<%@ page import="com.casestudy.foodtruck.service.CartItemService" %>
 <%@ page language="java" contentType="text/html; ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
-<%@ page import="com.casestudy.foodtruck.model.CartItem" %>
-<%@ page import="com.casestudy.foodtruck.service.CartItemService" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -37,7 +35,7 @@
                     Dave comes from a long line of donut makers and he is excited to bring his family's recipes to the
                     public.
                     Consumers have only known donuts as the over-processed and uninspired product of factories and
-                    assembly liines.
+                    assembly lines.
                     But now, he is delivering generations-worth of donut-making experience and experimentation to you!
 
                     <p>Founded in 2016, Dave's Donuts has been satisfying and delighting customers with an all-natural
@@ -61,10 +59,6 @@
     </div>
 </div>
 
-
-<p></p>
-<p></p>
-<p></p>
 <div class="panel-footer">
     <%@include file="footer.jsp" %>
 </div>

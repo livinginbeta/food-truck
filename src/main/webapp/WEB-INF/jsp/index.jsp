@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <%@ include file="header.jsp" %>
-    <title>Donut Details</title>
+    <title>Dave's Donuts</title>
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/stylesheets/main.css">
     <style>
@@ -33,12 +33,14 @@
 
                 <div class="panel-heading"><h1>Welcome!</h1>
                 </div>
-                <div class="panel-body">
+                <div class="home-body">
                     Dave's Donuts is now mobile! Get your favorite artisan treats/breakfast food
-                        around the city and at public events.
-                    <p><img src="${pageContext.request.contextPath}/images/logo/rounded-square.png" class="small-img"/>
-                        Dave's determination to deliver delicious donuts and other delectable desserts to discriminating
-                        diners has not diminished despite driving distances daily to different destinations downtown!</p>
+                    around the city and at public events.
+                    <p>Dave's determination to deliver delicious donuts and other delectable desserts
+                        <img src="${pageContext.request.contextPath}/images/logo/rounded-square.png" class="small-img"/>to
+                        discriminating
+                        diners has not diminished despite driving distances daily to different destinations downtown!
+                    </p>
 
                     <p>We are now able to directly interact with customers who wouldn't be able to get to
                         a more traditional location. Follow us on
@@ -48,17 +50,12 @@
                         out where we will be next and what is on the menu for the day. if you have a
                         request, message us and we will try to add it to our offerings.</p>
                     <p>If you've never had a donut from Dave's, you owe it to yourself to try
-                    some. We make every donut by hand on the day it is sold -- the same goes
-                    for our icings, creams, custards, and jellies. We make your treats with the highest
-                    standards: GMO-Free, ethically-raised, and, where possible, our ingredients are
-                    locally-sourced. You can taste the difference.</p>
+                        some. We make every donut by hand on the day it is sold -- the same goes
+                        for our icings, creams, custards, and jellies. We make your treats with the highest
+                        standards: GMO-Free, ethically-raised, and, where possible, our ingredients are
+                        locally-sourced. You can taste the difference.</p>
                     <p> Stop by and visit our truck today!</p>
-                    <p>
-                    </p>
-                    <p>
-                    </p>
-                    <p>
-                    </p>
+
                 </div>
             </div>
         </div>
@@ -66,18 +63,11 @@
 </div>
 
 
-
-
-
-
-
-
-
 <p></p>
 <p></p>
 <p></p>
 <div class="panel-footer">
-    <%@include file="footer.jsp"%>
+    <%@include file="footer.jsp" %>
 </div>
 </body>
 </html>
