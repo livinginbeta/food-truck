@@ -1,9 +1,7 @@
 package com.casestudy.foodtruck.model;
 
-
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Cart {
@@ -14,7 +12,6 @@ public class Cart {
     @OneToMany
     @ElementCollection
     private List<CartItem> cartItems;
-
 
     public Cart(Long cartId, List<CartItem> cartItems) {
         this.cartId = cartId;
@@ -62,5 +59,4 @@ public class Cart {
     public Integer getCartItemCount() {
         return getCartItems().size();
     }
-
 }

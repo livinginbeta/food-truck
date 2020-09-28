@@ -1,6 +1,5 @@
 package com.casestudy.foodtruck.controller;
-import com.casestudy.foodtruck.model.Cart;
-import com.casestudy.foodtruck.model.CartItem;
+
 import com.casestudy.foodtruck.service.CartItemService;
 import com.casestudy.foodtruck.service.CartService;
 import com.casestudy.foodtruck.service.ItemService;
@@ -8,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
 @Controller
-@ControllerAdvice ///Maybe.... ?
+@ControllerAdvice
 @RequestMapping("/")
 public class HomeController {
     //private Cart cart;
@@ -20,18 +19,27 @@ public class HomeController {
     private CartItemService cartItemService;
     @Autowired
     private CartService cartService;
+
     @GetMapping("/all")
     public String getAllItems(Model model) {
         model.addAttribute("items", itemService.readAll());
         model.addAttribute("cartItems", cartItemService.readAll()); ///allows display of items in cart
         return "menu_items";
     }
+
+    @GetMapping("/{itemId}")
+    public String getItemById(Model model, @PathVariable Long itemId) {
+        model.addAttribute("item", itemService.readById(itemId));
+        return "item_page";
+    }
+
     @GetMapping("/checkout")
     public String getAllCartItems(Model model) {
         model.addAttribute("items", itemService.readAll());
         model.addAttribute("cartItems", cartItemService.readAll());
         return "checkout";
     }
+
     @GetMapping("/index")
     public String homepage(Model model) {
         return "index";
@@ -41,30 +49,24 @@ public class HomeController {
     public String about(Model model) {
         return "about";
     }
-    /*    @RequestMapping(value="/addtocart/{cartId}/{itemName}", method={RequestMethod.POST, RequestMethod.GET})
-        public String addToCart(Model model, @PathVariable Long cartId, String itemName) {
-        //    model.addAttribute("cart", cartService.addToCart(cartId, itemName));
-            model.addAttribute("cart", cart.getCartId());
-            return "cart";
-        }
-     */
-    ////////////////////Also in CartItemService
+
     //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
     @RequestMapping(value = "/addtocart/id/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
     public String addToCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.addToCart(itemId));
-        return "redirect:/all/#{itemId}"; //return "menu_items";   ///"cart"
+        return "redirect:/all/#{itemId}";
     }
+
     @RequestMapping(value = "/removefromcart/id/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String removeFromCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
-        return "redirect:/all/#{itemId}"; //return "menu_items";   ///"cart"
+        return "redirect:/all/#{itemId}";
     }
 
     @GetMapping("/clearcart/id/{itemId}")
     public String clearCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.clearCart(itemId));
-        return "redirect:/all/#{itemId}";     
+        return "redirect:/all/#{itemId}";
     }
 
     ///SHOPPING CART VERSIONS
@@ -72,12 +74,13 @@ public class HomeController {
     @RequestMapping(value = "/addtocart/sc/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
     public String addToCheckoutCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.addToCart(itemId));
-        return "redirect:/checkout"; //return "menu_items";   ///"cart"
+        return "redirect:/checkout";
     }
+
     @RequestMapping(value = "/removefromcart/sc/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String removeFromCheckoutCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
-        return "redirect:/checkout"; //return "menu_items";   ///"cart"
+        return "redirect:/checkout";
     }
 
     @GetMapping("/clearcart/sc/{itemId}")
@@ -86,39 +89,23 @@ public class HomeController {
         return "redirect:/checkout";
     }
 
-
-    
     ///DETAIL PAGE VERSIONS
     //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
     @RequestMapping(value = "/addtocart/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
     public String addToDetailCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.addToCart(itemId));
-        return "redirect:/{itemId}"; //return "menu_items";   ///"cart"
+        return "redirect:/{itemId}";
     }
+
     @RequestMapping(value = "/removefromcart/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String removeFromDetailCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
-        return "redirect:/{itemId}"; //return "menu_items";   ///"cart"
+        return "redirect:/{itemId}";
     }
 
     @GetMapping("/clearcart/{itemId}")
     public String clearDetailCart(Model model, @PathVariable Long itemId) {
         model.addAttribute("cartItems", cartItemService.clearCart(itemId));
         return "redirect:/{itemId}";
-    }
-    
-    
-    
-
-    ////////////////////////////////////////
-    @GetMapping("/{itemId}")
-    public String getItemById(Model model, @PathVariable Long itemId) {
-        model.addAttribute("item", itemService.readById(itemId));
-        return "item_page";
-    }
-    @GetMapping("/test")
-    public String homepage() {
-        System.out.println("Welcome!");
-        return "test";
     }
 }

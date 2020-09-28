@@ -1,16 +1,13 @@
 package com.casestudy.foodtruck.controller;
 
-
 import com.casestudy.foodtruck.model.Cart;
 import com.casestudy.foodtruck.model.CartItem;
-import com.casestudy.foodtruck.model.Item;
 import com.casestudy.foodtruck.service.CartItemService;
 import com.casestudy.foodtruck.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,9 +29,7 @@ public class CartItemController {
         return new ResponseEntity<>(cartItemService.create(cartItemToBeCreated), HttpStatus.CREATED);
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    @PostMapping("/addtocart/{name}")  //removed cartId
+    @PostMapping("/addtocart/{name}")
     public ResponseEntity<Cart> addToCart(@PathVariable String name) {
         CartItem itemToAddToCart = cartItemService.readByName(name);
         Cart cartToReceiveItem = cartService.readById(1L);
@@ -42,19 +37,6 @@ public class CartItemController {
         cartToReceiveItem = cartService.updateById(1L, cartToReceiveItem);
         return new ResponseEntity<>(cartToReceiveItem, HttpStatus.CREATED);
     }
-
-    /*
-    @PostMapping("/addtocart/{cartId}/{name}")
-    public ResponseEntity<Cart> addToCart(@PathVariable Long cartId, @PathVariable String name) {
-        CartItem itemToAddToCart = cartItemService.readByName(name);
-        Cart cartToReceiveItem = cartService.readById(cartId);
-        cartToReceiveItem.addToCart(itemToAddToCart);
-        cartToReceiveItem = cartService.updateById(cartId, cartToReceiveItem);
-        return new ResponseEntity<>(cartToReceiveItem, HttpStatus.OK);
-    }
-
-     */
-
 
     @GetMapping("/read/all")
     public ResponseEntity<List<CartItem>> readAll() {
@@ -72,7 +54,6 @@ public class CartItemController {
         return new ResponseEntity<>(cartItemService.addToCart(itemId), HttpStatus.CREATED);
     }
 
-
     @PutMapping("/update/{cartItemId}")
     public ResponseEntity<CartItem> updateById(@PathVariable Long cartItemId, @RequestBody CartItem newData) {
         return new ResponseEntity<>(cartItemService.updateById(cartItemId, newData), HttpStatus.OK);
@@ -82,6 +63,4 @@ public class CartItemController {
     public ResponseEntity<CartItem> delete(@PathVariable Long cartItemId) {
         return new ResponseEntity<>(cartItemService.deleteById(cartItemId), HttpStatus.OK);
     }
-
-
 }

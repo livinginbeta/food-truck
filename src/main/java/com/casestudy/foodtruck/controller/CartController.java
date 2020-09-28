@@ -1,6 +1,5 @@
 package com.casestudy.foodtruck.controller;
 
-
 import com.casestudy.foodtruck.model.Cart;
 import com.casestudy.foodtruck.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +45,4 @@ public class CartController {
     public ResponseEntity<Cart> deleteById(@PathVariable Long cartId) {
         return new ResponseEntity<>(cartService.deleteById(cartId), HttpStatus.OK);
     }
-
 }

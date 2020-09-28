@@ -10,10 +10,7 @@ public class Item {
     private String name;
     private String description;
     private Double price;
-
-    //   @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE})
-    //   private Cart cart;
-
+    
 
     public Item(Long itemId, String name, String description, Double price) {
         this.itemId = itemId;

@@ -1,6 +1,5 @@
 package com.casestudy.foodtruck.controller;
 
-
 import com.casestudy.foodtruck.model.Item;
 import com.casestudy.foodtruck.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,6 @@ public class ItemController {
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
-
 
     @PostMapping("/create")
     public ResponseEntity<Item> create(@RequestBody Item itemToBeCreated) {

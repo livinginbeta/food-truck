@@ -24,6 +24,6 @@ public class ItemConfig {
         itemService.create(new Item(7L, "With Great Powder Comes Great Responsibiliy", "This super-powdered cake donut will make you feel like a hero.", 1.00));
         itemService.create(new Item(8L, "Old-Fashioned", "This classic is still around for a reason. Enjoy this sour cream cake donut while feeling sophisticated and mature. Monocle not included.", 1.00));
         itemService.setupAll();
-        
+
     }
 }
