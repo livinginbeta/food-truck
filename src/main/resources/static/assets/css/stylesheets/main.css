@@ -60,6 +60,12 @@ hr {
     padding-bottom: 35px;
 }
 
+.small-img {
+    float: left;
+    clear: left;
+    margin-right: 10px;
+}
+
 /*placeholder nav from https://www.w3schools.com/csS/css_navbar_horizontal.asp*/
 
 ul {
