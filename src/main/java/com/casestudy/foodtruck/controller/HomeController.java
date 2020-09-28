@@ -87,6 +87,28 @@ public class HomeController {
     }
 
 
+    
+    ///DETAIL PAGE VERSIONS
+    //Split RequestMethods to avoid "Request method 'GET' not supported" despite using POST method
+    @RequestMapping(value = "/addtocart/{itemId}", method = {RequestMethod.POST, RequestMethod.GET})
+    public String addToDetailCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.addToCart(itemId));
+        return "redirect:/{itemId}"; //return "menu_items";   ///"cart"
+    }
+    @RequestMapping(value = "/removefromcart/{itemId}", method = {RequestMethod.DELETE, RequestMethod.GET})
+    public String removeFromDetailCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.removeFromCart(itemId));
+        return "redirect:/{itemId}"; //return "menu_items";   ///"cart"
+    }
+
+    @GetMapping("/clearcart/{itemId}")
+    public String clearDetailCart(Model model, @PathVariable Long itemId) {
+        model.addAttribute("cartItems", cartItemService.clearCart(itemId));
+        return "redirect:/{itemId}";
+    }
+    
+    
+    
 
     ////////////////////////////////////////
     @GetMapping("/{itemId}")

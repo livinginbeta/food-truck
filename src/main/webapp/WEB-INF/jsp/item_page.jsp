@@ -57,15 +57,15 @@
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
 
                     <button type="button" class="btn btn-primary btn-md"
-                            onClick="location.href='/removefromcart/id/${item.itemId}'">&nbsp;-&nbsp;
+                            onClick="location.href='/removefromcart/${item.itemId}'">&nbsp;-&nbsp;
                     </button>
 
                     <button type="button" class="btn btn-primary btn-md"
-                            onClick="location.href='/addtocart/id/${item.itemId}'">&nbsp;+&nbsp;
+                            onClick="location.href='/addtocart/${item.itemId}'">&nbsp;+&nbsp;
                     </button>
 
                     <button type="button" class="btn btn-primary btn-md"
-                            onClick="location.href='/clearcart/id/${item.itemId}'">Clear
+                            onClick="location.href='/clearcart/${item.itemId}'">Clear
                     </button>
 
                 </div>
