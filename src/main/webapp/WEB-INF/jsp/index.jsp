@@ -31,14 +31,14 @@
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
 
-
                 <div class="panel-heading"><h1>Welcome!</h1>
                 </div>
                 <div class="panel-body">
                     Dave's Donuts is now mobile! Get your favorite artisan treats/breakfast food
                         around the city and at public events.
                     <p><img src="${pageContext.request.contextPath}/images/logo/rounded-square.png" class="small-img"/>
-                        Dave's determination to deliver delicious donuts is not diminished despite driving!</p>
+                        Dave's determination to deliver delicious donuts and other delectable desserts to discriminating
+                        diners has not diminished despite driving distances daily to different destinations downtown!</p>
 
                     <p>We are now able to directly interact with customers who wouldn't be able to get to
                         a more traditional location. Follow us on
@@ -59,7 +59,6 @@
                     </p>
                     <p>
                     </p>
-
                 </div>
             </div>
         </div>

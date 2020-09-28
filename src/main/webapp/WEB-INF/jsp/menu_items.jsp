@@ -27,11 +27,10 @@
 
         <c:set var="count" value="0" scope="page"/>
 
-
         <c:forEach items="${items}" var="item">  <!----------------------------->
         <a name="${item.itemId + 1}"></a>
         <div class="col-sm-4">
-            <!--< div class="panel panel-primary"> --><p></p>
+            <p></p>
 
                 <a href="${pageContext.request.contextPath}/${item.itemId}"><img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" class="preview" width="150"
                     height="150"/></a>
@@ -48,17 +47,11 @@
                             onClick="location.href='/${item.itemId}'">Details
                     </button><br>
 
-       <!--             <span> &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-                    #########################################
-                    <span> &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>  -->
-
 
                     <c:forEach items="${cartItems}" var="cartItem" begin="${count}" end="${count}"><!--->
 
 
-                        ${cartItem.getQuantity()} in cart
+                        ${cartItem.quantity} in cart
 
                     <c:set var="count" value="${count + 1}" scope="page"/>
                     </c:forEach>

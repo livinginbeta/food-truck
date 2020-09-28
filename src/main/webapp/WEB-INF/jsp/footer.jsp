@@ -8,9 +8,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 
-
 <footer>
-    <!-- footer of page begins here -->
     <div class="footer">
         <hr>
         &copy 2020 David Yirchott
@@ -20,4 +18,4 @@
         | <a href="/about" alt="About" title="About">About</a>
     </div>
     <script type="text/javascript" src="./js/footer-functions.js"></script>
-</footer> <!-- footer of page ends here -->
+</footer>

@@ -31,23 +31,29 @@
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
 
-
                 <div class="panel-heading"><h1>About</h1>
                 </div>
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere.
-                        Fusce eu neque eget elit gravida placerat. Aliquam laoreet porttitor tristique. Aliquam nec ultricies enim. Donec hendrerit nisi dolor, at laoreet ipsum consectetur
-                        id. Cras id nunc rhoncus, rhoncus tortor lobortis, ullamcorper nunc. Vivamus et elit vitae dui ullamcorper mollis.
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere.
-                        Fusce eu neque eget elit gravida placerat. Aliquam laoreet porttitor tristique. Aliquam nec ultricies enim. Donec hendrerit nisi dolor, at laoreet ipsum consectetur id.
-                        Cras id nunc rhoncus, rhoncus tortor lobortis, ullamcorper nunc. Vivamus et elit vitae dui ullamcorper mollis. </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere. Fusce
-                        eu neque eget elit gravida placerat. Aliquam laoreet porttitor tristique. Aliquam nec ultricies enim. Donec hendrerit nisi dolor, at laoreet ipsum consectetur id. Cras
-                        id nunc rhoncus, rhoncus tortor lobortis, ullamcorper nunc. Vivamus et elit vitae dui ullamcorper mollis. </p>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem magna, porta id sollicitudin at, tempus ac lacus. Sed condimentum hendrerit tellus a posuere. Fusce
-                        eu neque eget elit gravida placerat. Aliquam laoreet porttitor tristique. Aliquam nec ultricies enim. Donec hendrerit nisi dolor, at laoreet ipsum consectetur id. Cras id
-                        nunc rhoncus, rhoncus tortor lobortis, ullamcorper nunc. Vivamus et elit vitae dui ullamcorper mollis. </p>
+                    Dave comes from a long line of donut makers and he is excited to bring his family's recipes to the
+                    public.
+                    Consumers have only known donuts as the over-processed and uninspired product of factories and
+                    assembly liines.
+                    But now, he is delivering generations-worth of donut-making experience and experimentation to you!
 
+                    <p>Founded in 2016, Dave's Donuts has been satisfying and delighting customers with an all-natural
+                        approarch
+                        and a creative reimagining of traditional baked goods.
+                    </p>
+
+                    <p>Trained as a pâtissier at the CIA -- the Culinary Institute of America -- Dave went on to
+                        apprentice with
+                        several world-renown chefs before deciding to strike out on his own in a converted RV to bring
+                        joy
+                        to others through handmade desserts. </p>
+
+                    <p>Dave still thinks he has the best job in the world and has no plans to slow down. he is looking
+                        to expand his
+                        business and continue to serve this area for years to come.</p>
 
                 </div>
             </div>
@@ -56,18 +62,11 @@
 </div>
 
 
-
-
-
-
-
-
-
 <p></p>
 <p></p>
 <p></p>
 <div class="panel-footer">
-    <%@include file="footer.jsp"%>
+    <%@include file="footer.jsp" %>
 </div>
 </body>
 </html>

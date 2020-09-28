@@ -17,36 +17,25 @@
             font-family: 'Jura';
             font-size: 22px;
         }
-
         h1 {
             border-bottom: 1px solid darkgoldenrod;
         }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <!------------------------------------------------------------>
-    <!----------------------------------------------------------->
-    <!----------------------------------------------------------->
 
     <div class="row">
-
-
-
-
-
         <div class="col-sm-4">
             <div class="panel panel-primary"><p></p>
                 <div class="panel-heading">${item.name}<br>
                 </div>
                 <div class="panel-body">
-                        ${item.description}<br>
+                    ${item.description}<br>
                     <fmt:setLocale value="en_US"/>
                     <fmt:formatNumber value="${item.price}" type="currency"/> each<br>
                 </div>
                 <div class="panel-footer">
-
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/all/#${item.itemId}'">Back To Donut List
                     </button>
@@ -67,40 +56,30 @@
                     <button type="button" class="btn btn-primary btn-md"
                             onClick="location.href='/clearcart/${item.itemId}'">Clear
                     </button>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-    <!-------------------------------------------------------------------------->
-    <!-------------------------------------------------------------------------->
-    <!--------------------------------------------------------------------------->
-
-
-    <div class="images">
-        <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" width="300"
-             height="300"/>
-        <img src="${pageContext.request.contextPath}/images/nutrition/${item.itemId}.png" width="300"
-             height="300"/>
-
-    </div>
-
-
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <%@include file="footer.jsp" %>
+<div class="images">
+    <img src="${pageContext.request.contextPath}/images/donuts/${item.itemId}.png" width="300"
+         height="300"/>
+    <img src="${pageContext.request.contextPath}/images/nutrition/${item.itemId}.png" width="300"
+         height="300"/>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<%@include file="footer.jsp" %>
 </body>
 </html>

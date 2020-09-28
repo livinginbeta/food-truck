@@ -37,12 +37,9 @@
         <table width="100%">
 
 
-
-
             <c:set var="total" scope="session" value="${0}"/>
             <c:forEach items="${cartItems}" var="cartItem">
                 <c:set var="subtotal" scope="session" value="${{cartItem.item.price * cartItem.quantity}}"/>
-
 
                 <c:set var="number" scope="session" value="${0}"/>
                 <c:if test="${cartItem.quantity==0}">
@@ -51,7 +48,6 @@
                 <c:if test="${number==7}">
                     <div class="empty"><c:out value="Your shopping cart is empty. Buy Donuts!"/></div>
                 </c:if>
-
 
                 <c:if test="${cartItem.quantity>0}">
                     <tr>
@@ -94,7 +90,6 @@
                            onClick="window.print();return false;">
                             <img src="${pageContext.request.contextPath}/images/logo/print_on_white.png"
                                  alt="Print This Page" title="Print This Page" /></a></div>
-
                 </td>
             </tr>
         </table>
