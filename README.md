@@ -28,7 +28,7 @@ How to experience this project:
 
  * Run FoodTruckApplication
 
- * Open a browser and go to http://localhost8080/index
+ * Open a browser and go to http://localhost:8080/index
 
  * This is the home page. It has information about the food truck and a logo
 
